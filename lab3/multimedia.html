@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Multimédia - Mafra</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .fotografias {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .fotografias img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border: 2px solid #333;
+        padding: 5px;
+      }
+
+      .poema p:nth-child(odd) {
+        margin-left: 20px;
+      }
+
+      .poema p:nth-child(even) {
+        margin-left: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Multimédia - Mafra</h1>
+    </header>
+
+    <nav>
+      <a href="../index.html">Página Principal</a>
+      <a href="../lab1/index.html">Lab 1</a>
+      <a href="../cidade/index.html">Cidade</a>
+      <a href="index.html">Lab 2</a>
+      <a href="../cidade/local.html">Localização</a>
+      <a href="multimedia.html">Multimédia</a>
+      <a href="info.html">Informações</a>
+    </nav>
+
+    <main>
+      <h2>Multimédia</h2>
+
+      <p>
+        Nesta página apresento diferentes elementos multimédia relacionados com
+        a cidade de Mafra.
+      </p>
+
+      <p>
+        <a href="#fotografias">Fotografias</a> | <a href="#video">Vídeo</a> |
+        <a href="#poesia">Poesia</a>
+      </p>
+
+      <section>
+        <h3 id="fotografias">Fotografias</h3>
+
+        <div class="fotografias">
+          <img src="images/mafra1.jpg" alt="Mafra" />
+          <img src="images/mafra2.jpg" alt="Palácio de Mafra" />
+          <img src="images/mafra3.jpg" alt="Centro de Mafra" />
+          <img src="images/mafra4.jpg" alt="Paisagem de Mafra" />
+          <img src="images/mafra5.jpg" alt="Monumento de Mafra" />
+          <img src="images/mafra6.jpg" alt="Rua de Mafra" />
+          <img src="images/mafra7.jpg" alt="Mafra vista exterior" />
+          <img src="images/mafra8.jpg" alt="Paisagem de Mafra" />
+        </div>
+      </section>
+
+      <section>
+        <h3 id="video">Vídeo</h3>
+
+        <h4>Flautista - Casa da Amália - Mafra</h4>
+
+        <p>Atuação de um flautista junto à Casa da Amália, em Mafra.</p>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/olA6nhi1k_E"
+          title="Flautista - Casa da Amália - Mafra"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+          "
+          allowfullscreen
+        ></iframe>
+
+        <h4>Convento Nacional de Mafra</h4>
+
+        <p>
+          O Convento Nacional de Mafra é um dos mais importantes monumentos do
+          barroco português, de matriz italiana. Foi projectado por Johann
+          Ludwig, formado em arquitectura em Itália, e construído entre 1717 e
+          1730.
+        </p>
+
+        <p>
+          Para a Real Basílica de Mafra, D. João V encomendou uma das mais
+          significativas colecções de escultura barroca existente fora de
+          Itália, num total de 58 estátuas.
+        </p>
+
+        <p>
+          O romance <em>Memorial do Convento</em>, de José Saramago, retrata
+          também o percurso das estátuas desde o Tejo até Mafra, transportadas
+          inicialmente por barco e depois em carros de bois, por terrenos
+          difíceis.
+        </p>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/BwarxPBPxEE"
+          title="Convento Nacional de Mafra"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+          "
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section>
+        <h3 id="poesia">Poesia</h3>
+
+        <div class="poema">
+          <p>Mafra, cidade de história e tradição,</p>
+          <p>Onde o palácio domina a paisagem,</p>
+          <p>Entre pedra, cultura e emoção,</p>
+          <p>Guarda memórias de uma antiga viagem.</p>
+          <p>O Atlântico acompanha o horizonte,</p>
+          <p>E a natureza envolve cada lugar,</p>
+          <p>Mafra permanece sempre no coração,</p>
+          <p>Uma cidade que vale a pena visitar.</p>
+        </div>
+      </section>
+
+      <p>
+        <a href="index.html">← RETROCEDER</a>
+      </p>
+    </main>
+
+    <footer>
+      <p>Multimédia - Mafra</p>
+    </footer>
+  </body>
+</html>
