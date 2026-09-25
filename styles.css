@@ -16,7 +16,7 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(0 0 0 / 70%);
 }
 
 nav ul {
@@ -36,7 +36,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(255 255 255 / 20%);
 }
 
 /* Todas as secções */
@@ -61,22 +61,8 @@ section {
   color: white;
 }
 
-/* Projetos */
-
-#projetos {
-  background-color: #d9d9d9;
-}
-
-/* Disciplina */
-
-#cadeira {
-  background-color: #eeeeee;
-}
-
-/* Conteúdo do Hero */
-
 #inicio div {
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgb(0 0 0 / 55%);
   padding: 40px;
   border-radius: 10px;
 }
@@ -91,23 +77,11 @@ section {
   margin-bottom: 30px;
 }
 
-/* Botão */
+/* Projetos */
 
-.botao {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: #063;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+#projetos {
+  background-color: #d9d9d9;
 }
-
-.botao:hover {
-  background-color: #084;
-}
-
-/* Cartões dos projetos */
 
 .projetos {
   display: flex;
@@ -123,7 +97,7 @@ section {
   width: 250px;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
 }
 
 .projetos article h3 {
@@ -147,6 +121,7 @@ section {
 /* Secção da disciplina */
 
 #cadeira {
+  background-color: #eee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,23 +145,6 @@ section {
   text-align: center;
 }
 
-/* Layout responsivo */
-
-@media (max-width: 768px) {
-  #cadeira {
-    padding: 100px 20px 40px;
-  }
-
-  #cadeira > div {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  #cadeira .texto,
-  #cadeira .wordcloud {
-    width: 100%;
-  }
-}
 /* Wordcloud */
 
 .wordcloud {
@@ -223,4 +181,22 @@ section {
 
 .wordcloud p:nth-of-type(5) {
   font-size: 1.8rem;
+}
+
+/* Layout responsivo */
+
+@media (width <= 768px) {
+  #cadeira {
+    padding: 100px 20px 40px;
+  }
+
+  #cadeira > div {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #cadeira .texto,
+  #cadeira .wordcloud {
+    width: 100%;
+  }
 }
