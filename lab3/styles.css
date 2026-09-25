@@ -66,3 +66,77 @@ footer {
     padding: 20px;
   }
 }
+
+/* Fotografia emblemática */
+
+.imagem-emblematica {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imagem-emblematica img {
+  display: block;
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.frase-emblematica {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+  background-color: rgb(0 0 0 / 55%);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+/* Secções da página multimédia */
+
+.secao-fotografias,
+.secao-video,
+.secao-poesia {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 100px 40px 40px;
+}
+
+.secao-fotografias {
+  background-color: #eee;
+}
+
+.secao-video {
+  background-color: #d9d9d9;
+}
+
+.secao-poesia {
+  background-color: #e6e6e6;
+}
+
+/* Vídeos responsivos */
+
+.secao-video iframe {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+/* Ajuste da fotografia emblemática em ecrãs pequenos */
+
+@media (width <= 600px) {
+  .imagem-emblematica img {
+    height: 50vh;
+  }
+
+  .frase-emblematica {
+    left: 3%;
+    bottom: 8%;
+    padding: 12px;
+  }
+}

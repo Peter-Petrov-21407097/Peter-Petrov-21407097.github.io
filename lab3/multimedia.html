@@ -10,6 +10,7 @@
       .fotografias {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
       }
 
@@ -19,6 +20,11 @@
         object-fit: cover;
         border: 2px solid #333;
         padding: 5px;
+        transition: transform 0.3s ease;
+      }
+
+      .fotografias img:hover {
+        transform: scale(1.2);
       }
 
       .poema p:nth-child(odd) {
@@ -46,6 +52,12 @@
       <a href="info.html">Informações</a>
     </nav>
 
+    <section class="imagem-emblematica">
+      <img src="images/mafra7.jpg" alt="Vista de Mafra" />
+
+      <div class="frase-emblematica">Mafra, história que permanece.</div>
+    </section>
+
     <main>
       <h2>Multimédia</h2>
 
@@ -59,7 +71,7 @@
         <a href="#poesia">Poesia</a>
       </p>
 
-      <section>
+      <section class="secao-fotografias">
         <h3 id="fotografias">Fotografias</h3>
 
         <div class="fotografias">
@@ -74,7 +86,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="secao-video">
         <h3 id="video">Vídeo</h3>
 
         <h4>Flautista - Casa da Amália - Mafra</h4>
@@ -136,7 +148,7 @@
         ></iframe>
       </section>
 
-      <section>
+      <section class="secao-poesia">
         <h3 id="poesia">Poesia</h3>
 
         <div class="poema">
