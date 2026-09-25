@@ -47,30 +47,7 @@ section {
   padding: 100px 40px 40px;
 }
 
-/* Hero */
-
-#inicio {
-  background-image: url("lab3/images/mafra7.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-#inicio div {
-  background-color: rgb(0 0 0 / 55%);
-  padding: 40px;
-  border-radius: 10px;
-}
-
-#inicio h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
+/* Wordcloud */
 
 .wordcloud {
   position: relative;
@@ -106,6 +83,31 @@ section {
 
 .wordcloud p:nth-of-type(5) {
   font-size: 1.8rem;
+}
+
+/* Hero */
+
+#inicio {
+  background-image: url("lab3/images/mafra7.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+#inicio div {
+  background-color: rgb(0 0 0 / 55%);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+#inicio h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
 }
 
 #inicio p {
@@ -175,8 +177,6 @@ section {
 #cadeira .texto {
   flex: 1;
 }
-
-
 
 #cadeira .wordcloud {
   flex: 1;
