@@ -3,35 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A Minha Cidade - Mafra</title>
+    <title>Portefólio - Interfaces Web</title>
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <header>
-      <h1>A Minha Cidade - Mafra</h1>
-    </header>
-
     <nav>
-      <a href="index.html">Página Principal</a>
-      <a href="lab1/index.html">Lab 1</a>
-      <a href="cidade/index.html">Cidade</a>
-      <a href="lab2/index.html">Lab 2</a>
-      <a href="lab3/index.html">Lab 3</a>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#cadeira">Interfaces Web</a></li>
+      </ul>
     </nav>
 
-    <main>
-      <h2>Bem-vindo</h2>
+    <section id="inicio">
+      <div>
+        <h1>Bem-vindo ao meu website</h1>
+        <p>Descubra os meus projetos de Interfaces Web.</p>
 
-      <p>Este website apresenta o meu trabalho sobre a cidade de Mafra.</p>
+        <a href="#projetos" class="botao">Ver Projetos</a>
+      </div>
+    </section>
 
-      <p>
-        Aqui pode consultar as diferentes páginas desenvolvidas nos
-        laboratórios.
-      </p>
-    </main>
+    <section id="projetos">
+      <h2>Projetos</h2>
 
-    <footer>
-      <p>A Minha Cidade - Mafra</p>
-    </footer>
+      <div class="projetos">
+        <article>
+          <h3>Lab 1</h3>
+          <p>Primeiro Website</p>
+          <a href="lab1/index.html">Ver projeto</a>
+        </article>
+
+        <article>
+          <h3>Lab 2</h3>
+          <p>A Minha Cidade - Mafra</p>
+          <a href="lab2/index.html">Ver projeto</a>
+        </article>
+
+        <article>
+          <h3>Lab 3</h3>
+          <p>Landing Page</p>
+          <a href="lab3/index.html">Ver projeto</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="cadeira">
+      <div>
+        <div class="texto">
+          <h2>Interfaces Web</h2>
+
+          <p>
+            Nesta disciplina são abordados conceitos relacionados com o
+            desenvolvimento de interfaces web, utilizando tecnologias como HTML
+            e CSS.
+          </p>
+
+          <p>
+            Ao longo dos laboratórios são desenvolvidos diferentes projetos
+            práticos para aplicar os conhecimentos adquiridos.
+          </p>
+        </div>
+
+        <div class="wordcloud">
+          <h2>Wordcloud</h2>
+
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>Web Design</p>
+          <p>Interfaces</p>
+          <p>Responsive</p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

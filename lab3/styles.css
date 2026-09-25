@@ -50,7 +50,7 @@ footer {
 }
 
 /* Menu para telemóveis */
-@media (max-width: 600px) {
+@media (width <= 600px) {
   nav {
     padding: 10px;
     gap: 8px;
