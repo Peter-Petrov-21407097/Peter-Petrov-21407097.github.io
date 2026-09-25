@@ -140,13 +140,6 @@ section {
   flex: 1;
 }
 
-#cadeira .wordcloud {
-  flex: 1;
-  text-align: center;
-}
-
-/* Wordcloud */
-
 .wordcloud {
   position: relative;
   min-height: 300px;
@@ -181,6 +174,11 @@ section {
 
 .wordcloud p:nth-of-type(5) {
   font-size: 1.8rem;
+}
+
+#cadeira .wordcloud {
+  flex: 1;
+  text-align: center;
 }
 
 /* Layout responsivo */
