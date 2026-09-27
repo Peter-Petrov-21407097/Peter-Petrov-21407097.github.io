@@ -6,32 +6,6 @@
 
     <title>Informações - Mafra</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      table {
-        border-collapse: collapse;
-        width: 80%;
-      }
-
-      th,
-      td {
-        border: 1px solid black;
-        padding: 10px;
-        text-align: center;
-      }
-
-      th {
-        color: darkblue;
-        background-color: #e6e6e6;
-      }
-
-      td {
-        color: #333333;
-      }
-
-      .curiosidades {
-        color: darkgreen;
-      }
-    </style>
   </head>
 
   <body>
@@ -42,7 +16,7 @@
     <nav>
       <a href="../index.html">Página Principal</a>
       <a href="../lab1/index.html">Lab 1</a>
-      <a href="../vila/index.html">vila</a>
+      <a href="../cidade/index.html">Vila</a>
       <a href="index.html">Lab 2</a>
       <a href="local.html">Localização</a>
       <a href="multimedia.html">Multimédia</a>
@@ -52,75 +26,104 @@
     <main>
       <h2>Informações</h2>
 
-      <p>
-        Nesta página apresento algumas informações geográficas, históricas e
-        culturais sobre a vila de Mafra.
-      </p>
+      <div class="informacoes-grid">
+        <section class="introducao">
+          <h3>Sobre Mafra</h3>
+          <p>
+            Nesta página apresento algumas informações geográficas, históricas e
+            culturais sobre a vila de Mafra.
+          </p>
+        </section>
 
-      <h3>Dados sobre Mafra</h3>
+        <div class="imagem-grid imagem-1">
+          <img src="images/mafra1.jpg" alt="Vista de Mafra" />
+        </div>
 
-      <table>
-        <tbody>
-          <tr>
-            <th colspan="3" scope="colgroup">Informações Gerais</th>
-          </tr>
+        <div class="vazio"></div>
 
-          <tr>
-            <th scope="col">Categoria</th>
-            <th scope="col">Informação</th>
-            <th scope="col">Detalhes</th>
-          </tr>
+        <section class="dados">
+          <h3>Dados sobre Mafra</h3>
 
-          <tr>
-            <td rowspan="2">Geografia</td>
-            <td>País</td>
-            <td>Portugal</td>
-          </tr>
+          <table>
+            <tbody>
+              <tr>
+                <th colspan="3" scope="colgroup">Informações Gerais</th>
+              </tr>
 
-          <tr>
-            <td>Distrito</td>
-            <td>Lisboa</td>
-          </tr>
+              <tr>
+                <th scope="col">Categoria</th>
+                <th scope="col">Informação</th>
+                <th scope="col">Detalhes</th>
+              </tr>
 
-          <tr>
-            <td rowspan="2">Património</td>
-            <td>Monumento principal</td>
-            <td>Palácio Nacional de Mafra</td>
-          </tr>
+              <tr>
+                <td rowspan="2">Geografia</td>
+                <td>País</td>
+                <td>Portugal</td>
+              </tr>
 
-          <tr>
-            <td>Construção</td>
-            <td>1717 - 1730</td>
-          </tr>
-        </tbody>
-      </table>
+              <tr>
+                <td>Distrito</td>
+                <td>Lisboa</td>
+              </tr>
 
-      <h3>5 Curiosidades sobre Mafra</h3>
+              <tr>
+                <td rowspan="2">Património</td>
+                <td>Monumento principal</td>
+                <td>Palácio Nacional de Mafra</td>
+              </tr>
 
-      <div class="curiosidades">
-        <ol>
-          <li>
-            O Palácio Nacional de Mafra é um dos monumentos mais importantes do
-            barroco português.
-          </li>
+              <tr>
+                <td>Construção</td>
+                <td>1717 - 1730</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-          <li>A Real Basílica de Mafra possui seis órgãos históricos.</li>
+        <div class="imagem-grid imagem-2">
+          <img src="images/mafra2.jpg" alt="Palácio Nacional de Mafra" />
+        </div>
 
-          <li>
-            A biblioteca do Palácio Nacional de Mafra é conhecida pela sua
-            coleção de livros antigos.
-          </li>
+        <section class="curiosidades">
+          <h3>5 Curiosidades sobre Mafra</h3>
 
-          <li>
-            Mafra possui uma extensa zona litoral, com várias praias junto ao
-            Oceano Atlântico.
-          </li>
+          <ol>
+            <li>
+              O Palácio Nacional de Mafra é um dos monumentos mais importantes
+              do barroco português.
+            </li>
 
-          <li>
-            O romance <em>Memorial do Convento</em>, de José Saramago, está
-            relacionado com a construção do convento de Mafra.
-          </li>
-        </ol>
+            <li>A Real Basílica de Mafra possui seis órgãos históricos.</li>
+
+            <li>
+              A biblioteca do Palácio Nacional de Mafra é conhecida pela sua
+              coleção de livros antigos.
+            </li>
+
+            <li>
+              Mafra possui uma extensa zona litoral, com várias praias junto ao
+              Oceano Atlântico.
+            </li>
+
+            <li>
+              O romance <em>Memorial do Convento</em>, de José Saramago, está
+              relacionado com a construção do convento de Mafra.
+            </li>
+          </ol>
+        </section>
+
+        <div class="imagem-grid imagem-3">
+          <img src="images/mafra3.jpg" alt="Centro de Mafra" />
+        </div>
+
+        <div class="vazio"></div>
+
+        <div class="imagem-grid imagem-4">
+          <img src="images/mafra4.jpg" alt="Paisagem de Mafra" />
+        </div>
+
+        <div class="vazio"></div>
       </div>
 
       <p>
