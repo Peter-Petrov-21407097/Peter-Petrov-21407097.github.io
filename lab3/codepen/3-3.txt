@@ -1,0 +1,67 @@
+<nav>
+  <a href="#">Início</a>
+  <a href="#">Produtos</a>
+  <a href="#">Contacto</a>
+  <a href="#">Login</a>
+</nav>
+<nav>
+  <a href="#">Início</a>
+  <a href="#">Produtos</a>
+  <a href="#">Contacto</a>
+  <a href="#">Login</a>
+</nav><nav>
+  <a href="#">Início</a>
+  <a href="#">Produtos</a>
+  <a href="#">Contacto</a>
+  <a href="#">Login</a>
+</nav><nav>
+  <a href="#">Início</a>
+  <a href="#">Produtos</a>
+  <a href="#">Contacto</a>
+  <a href="#">Login</a>
+</nav>
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+}
+
+nav {
+    margin: 20px 0;
+    padding: 20px;
+    gap: 20px;
+    background: whitesmoke;
+    display: flex;
+}
+
+nav a {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+/* 1.º menu - à esquerda */
+nav:nth-of-type(1) {
+    justify-content: flex-start;
+}
+
+/* 2.º menu - à direita */
+nav:nth-of-type(2) {
+    justify-content: flex-end;
+}
+
+/* 3.º menu - espaço entre os elementos */
+nav:nth-of-type(3) {
+    justify-content: space-between;
+}
+
+/* 4.º menu - espaço à volta dos elementos */
+nav:nth-of-type(4) {
+    justify-content: space-around;
+}

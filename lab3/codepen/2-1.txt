@@ -1,0 +1,28 @@
+<body>
+  <h1>Verde verde!</h1>
+  <p>Azul azul azul azul azul... </p>
+  <p id="vermelho">Vermelho!  </p>
+  <p>Azul azul azul azul azul.... </p>
+  <p>Azul <span class="preto">preto!!</span></p>
+</body>
+
+
+
+/* define os seletores adequados para
+   pintar as palavras da cor que dizem */
+
+h1 {
+    color: green;
+}
+
+p {
+    color: blue;
+}
+
+#vermelho {
+    color: red;
+}
+
+.preto {
+    color: black;
+}

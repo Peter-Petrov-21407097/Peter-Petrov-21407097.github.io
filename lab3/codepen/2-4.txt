@@ -1,0 +1,33 @@
+<header>Pinta as palavras em baixo:</header>
+
+<main>
+  <div>blue</div>
+  <div>
+    <div>green</div>
+  </div>
+</main>
+
+<footer>
+  <div>red</div>
+</footer>
+
+
+
+/* define os seletores adequados para
+   pintar as palavras da cor que dizem */
+
+h1 {
+    color: green;
+}
+
+p {
+    color: blue;
+}
+
+#vermelho {
+    color: red;
+}
+
+.preto {
+    color: black;
+}

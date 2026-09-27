@@ -420,3 +420,32 @@ footer {
     font-size: 1rem;
   }
 }
+
+/* Página dos CodePens */
+
+main > section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main > section > article {
+  margin-bottom: 40px;
+  padding: 25px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+main > section > article h3 {
+  margin-top: 0;
+  color: #063;
+}
+
+@media (width <= 600px) {
+  main > section {
+    padding: 10px;
+  }
+
+  main > section > article {
+    padding: 15px;
+  }
+}

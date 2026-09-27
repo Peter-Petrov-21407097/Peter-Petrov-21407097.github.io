@@ -1,0 +1,40 @@
+<body>
+  <h1>Azul</h1>
+  <ul>
+    <li>Vermelho</li>
+    <li>Vermelho</li>
+    <ul>
+      <li>Preto</li>
+      <li>Verde</li>
+      <li>Preto</li>
+      <li>Verde</li>
+    </ul>
+    <li>Vermelho</li>
+  </ul>
+  <h1>Preto</h1>
+</body>
+
+
+
+/* define os seletores para pintar as palavras.
+
+   Usa seletores de pseudo-classe
+   :nth-child() ou nth-of-type()
+   e :first-child e :last-child
+
+   combinados com o elemento li
+*/
+
+h1:first-child {
+    color: blue;
+}
+
+ul > li:first-child,
+ul > li:nth-of-type(2),
+ul > li:last-child {
+    color: red;
+}
+
+ul ul li:nth-child(even) {
+    color: green;
+}

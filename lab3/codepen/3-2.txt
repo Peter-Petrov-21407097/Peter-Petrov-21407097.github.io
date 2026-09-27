@@ -1,0 +1,25 @@
+altere o CSS para que:
+<ul>
+  <li>quando a largura é inferior a 600px, o background fica azul</li>
+  <li>quando está entre 601px e 900px fica rosa,</li>
+  <li>quando é superior a 900px fica verde</li>
+</ul>
+
+
+
+body {
+    background: blue;
+    color: white;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    body {
+        background: pink;
+    }
+}
+
+@media (min-width: 901px) {
+    body {
+        background: green;
+    }
+}

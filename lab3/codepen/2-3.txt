@@ -1,0 +1,27 @@
+<p>Pinta as palavras em baixo (usando apenas seletores e sem alterar o HTML):</p>
+<ul>
+  <li>Verde</li>
+  <li>Preto</li>
+  <li>Verde</li>
+  <li>Preto</li>
+  <li>Verde</li>
+  <li>Preto</li>
+  <li>Verde</li>
+  <li>Vermelho!</li>
+</ul>
+
+
+
+/* defina os seletores para pintar as palavras.
+
+   Usa seletores de pseudo-classe
+   :nth-child() e :last-child
+*/
+
+li:nth-child(odd) {
+    color: green;
+}
+
+li:last-child {
+    color: red;
+}

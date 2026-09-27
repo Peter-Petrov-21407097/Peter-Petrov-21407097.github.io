@@ -1,0 +1,28 @@
+<h1>Sempre roxa</h1>
+<h2>Sempre roxa</h2>
+<h3>Sempre roxa</h3>
+
+<p>Fico verde se passares com o rato.</p>
+
+<p class="azul">Fico azul se passares.</p>
+
+<p id="ui">Sou verde, mas fico azul se me 
+sobrevoares, e vermelho se me clicares.</p>
+
+
+
+h1, h2, h3 {
+    color: purple;
+}
+
+p, #ui {
+    color: green;
+}
+
+.azul, #ui:hover {
+    color: blue;
+}
+
+#ui:active {
+    color: red;
+}
