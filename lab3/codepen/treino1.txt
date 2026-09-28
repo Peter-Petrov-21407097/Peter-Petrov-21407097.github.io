@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+
+  <body>
+
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>Main</main>
+        <aside>Aside</aside>
+        <footer>Footer</footer>
+
+  </body>
+
+</html>
+
+
+
+
+* {
+  boxsizing: border-box;
+}
+header {  grid-area: h;}
+nav {  grid-area: n;}
+main {  grid-area: m;}
+aside {  grid-area: a;}
+footer {  grid-area: f;}
+
+body {
+  display:grid;
+  background: blue;
+
+  grid-template-columns: 1fr 3fr 2fr;
+
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas:
+      'h h h'
+      'n m a'
+      'n f f';
+  gap: 10px;
+
+  height: 100vh;
+
+}
+
+
+body > * {
+  background: lightblue;
+}
