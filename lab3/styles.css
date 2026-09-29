@@ -12,6 +12,7 @@ header {
 }
 
 /* Menu responsivo */
+
 nav {
   background-color: #063;
   padding: 10px;
@@ -36,6 +37,7 @@ nav a:hover {
 }
 
 /* Conteúdo */
+
 main {
   background-color: white;
   margin: 20px;
@@ -50,6 +52,7 @@ footer {
 }
 
 /* Menu para telemóveis */
+
 @media (width <= 600px) {
   nav {
     padding: 10px;
@@ -451,4 +454,3 @@ footer {
     padding: 15px;
   }
 }
-
