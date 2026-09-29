@@ -451,3 +451,64 @@ footer {
     padding: 15px;
   }
 }
+
+/* Página de Tutoriais */
+
+main > section {
+  margin-bottom: 40px;
+}
+
+main > section > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+main > section article {
+  flex: 1 1 400px;
+  max-width: 560px;
+  padding: 25px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+main > section article h3 {
+  margin-top: 0;
+  color: #063;
+}
+
+main > section article iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+main > section > a,
+main > p a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #063;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+main > section > a:hover,
+main > p a:hover {
+  background-color: #084;
+}
+
+/* Página de Tutoriais em telemóveis */
+
+@media (width <= 600px) {
+  main > section > div {
+    flex-direction: column;
+  }
+
+  main > section article {
+    flex: 1 1 auto;
+    max-width: none;
+  }
+}
