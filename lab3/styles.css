@@ -513,7 +513,7 @@ main > p a:hover {
   justify-content: center;
 }
 
-.pagina-tutoriais > section article {
+.pagina-tutoriais > section > div > article {
   flex: 1 1 400px;
   max-width: 560px;
   padding: 25px;
@@ -521,18 +521,18 @@ main > p a:hover {
   border-radius: 10px;
 }
 
-.pagina-tutoriais > section article h3 {
+.pagina-tutoriais > section > div > article h3 {
   margin-top: 0;
   color: #063;
 }
 
-.pagina-tutoriais > section article iframe {
+.pagina-tutoriais > section > div > article iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
 }
 
-.pagina-tutoriais > section > a,
+.pagina-tutoriais > section:nth-child(2) > a,
 .pagina-tutoriais > p a {
   display: inline-block;
   margin-top: 20px;
@@ -543,7 +543,7 @@ main > p a:hover {
   border-radius: 5px;
 }
 
-.pagina-tutoriais > section > a:hover,
+.pagina-tutoriais > section:nth-child(2) > a:hover,
 .pagina-tutoriais > p a:hover {
   background-color: #084;
 }
@@ -555,7 +555,7 @@ main > p a:hover {
     flex-direction: column;
   }
 
-  .pagina-tutoriais > section article {
+  .pagina-tutoriais > section > div > article {
     flex: 1 1 auto;
     max-width: none;
   }
