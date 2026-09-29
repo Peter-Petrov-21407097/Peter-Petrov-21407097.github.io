@@ -69,7 +69,8 @@ nav a:hover {
   border: 0;
 }
 
-.pagina-tutoriais a {
+.pagina-tutoriais > section > a,
+.pagina-tutoriais > p > a {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 20px;
@@ -79,7 +80,8 @@ nav a:hover {
   border-radius: 5px;
 }
 
-.pagina-tutoriais a:hover {
+.pagina-tutoriais > section > a:hover,
+.pagina-tutoriais > p > a:hover {
   background-color: #084;
 }
 
