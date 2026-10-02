@@ -1,11 +1,9 @@
-let counter = 0;
+const mensagemMago = document.querySelector("#mensagem-mago");
 
-const heading = document.querySelector("h1");
-const botao = document.querySelector("#botao-contador");
+mensagemMago.addEventListener("mouseover", function () {
+  mensagemMago.textContent = "🔥 Viola usa FIREBALL! 🔥";
+});
 
-function count() {
-  counter++;
-  heading.textContent = counter;
-}
-
-botao.addEventListener("click", count);
+mensagemMago.addEventListener("mouseout", function () {
+  mensagemMago.textContent = "🧙‍♂️ O mago está à espera do seu turno...";
+});
