@@ -12,7 +12,6 @@ mensagemMago.addEventListener("mouseleave", function () {
   imagemBatalha.src = "images/batalha.jpg";
 });
 
-
 // EVENTO 2 — CORES DOS ATAQUES
 const textoAtaque = document.querySelector("#texto-ataque");
 
