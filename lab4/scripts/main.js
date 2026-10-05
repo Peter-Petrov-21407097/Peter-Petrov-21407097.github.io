@@ -45,3 +45,10 @@ botaoRadiante.addEventListener("click", function () {
 botaoEletricidade.addEventListener("click", function () {
   textoAtaque.style.color = "cyan";
 });
+
+// EVENTO 3 — POÇÃO MÁGICA
+const corPocao = document.querySelector("#cor-pocao");
+
+corPocao.addEventListener("input", function () {
+  corPocao.style.backgroundColor = corPocao.value;
+});
