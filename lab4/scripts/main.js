@@ -53,7 +53,6 @@ corPocao.addEventListener("input", function () {
   corPocao.style.backgroundColor = corPocao.value;
 });
 
-
 // EVENTO 4 — COR DA MAGIA
 const corMagica = document.querySelector("#cor-magica");
 const botaoMagia = document.querySelector("#botao-magia");
