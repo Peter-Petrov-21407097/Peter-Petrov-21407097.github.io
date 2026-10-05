@@ -52,3 +52,30 @@ const corPocao = document.querySelector("#cor-pocao");
 corPocao.addEventListener("input", function () {
   corPocao.style.backgroundColor = corPocao.value;
 });
+
+
+// EVENTO 4 — COR DA MAGIA
+const corMagica = document.querySelector("#cor-magica");
+const botaoMagia = document.querySelector("#botao-magia");
+const explosao = document.querySelector("#explosao");
+
+botaoMagia.addEventListener("click", function () {
+  document.body.style.backgroundColor = corMagica.value;
+
+  explosao.classList.add("explosao-ativa");
+
+  setTimeout(function () {
+    explosao.classList.remove("explosao-ativa");
+  }, 500);
+});
+
+// EVENTO 5 — CONTADOR DE INIMIGOS
+let inimigosEsmagados = 33;
+
+const contadorInimigos = document.querySelector("#contador-inimigos");
+const botaoEsmagar = document.querySelector("#botao-esmagar");
+
+botaoEsmagar.addEventListener("click", function () {
+  inimigosEsmagados++;
+  contadorInimigos.textContent = inimigosEsmagados;
+});

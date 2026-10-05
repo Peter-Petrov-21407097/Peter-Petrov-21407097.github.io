@@ -40,3 +40,30 @@ main {
   max-width: 100%;
   border-radius: 10px;
 }
+
+#explosao {
+  font-size: 30px;
+  text-align: center;
+  opacity: 0;
+}
+
+.explosao-ativa {
+  animation: explosao 0.5s ease;
+}
+
+@keyframes explosao {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
