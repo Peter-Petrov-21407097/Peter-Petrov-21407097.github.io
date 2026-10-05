@@ -67,3 +67,14 @@ main {
     opacity: 0;
   }
 }
+
+.fireball-container {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#gif-fireball {
+  width: 300px;
+  max-width: 100%;
+}

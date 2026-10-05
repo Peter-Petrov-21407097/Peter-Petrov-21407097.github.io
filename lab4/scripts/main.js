@@ -3,7 +3,7 @@ const imagemBatalha = document.querySelector("#imagem-batalha");
 
 // EVENTO 1 — FIREBALL
 mensagemMago.addEventListener("mouseenter", function () {
-  mensagemMago.textContent = "🔥 Viola usa FIREBALL! 🔥";
+  mensagemMago.textContent = "🔥 Gandalf usa FIREBALL! 🔥";
   imagemBatalha.src = "images/fireball.jpg";
 });
 
@@ -13,6 +13,7 @@ mensagemMago.addEventListener("mouseleave", function () {
 });
 
 // EVENTO 2 — CORES DOS ATAQUES
+const audioFireball = document.querySelector("#audio-fireball");
 const textoAtaque = document.querySelector("#texto-ataque");
 
 const botaoFogo = document.querySelector("#botao-fogo");
@@ -23,26 +24,35 @@ const botaoRadiante = document.querySelector("#botao-radiante");
 const botaoEletricidade = document.querySelector("#botao-eletricidade");
 
 botaoFogo.addEventListener("click", function () {
+  textoAtaque.textContent = "🔥 Fireball!";
   textoAtaque.style.color = "red";
+
+  audioFireball.currentTime = 0;
+  audioFireball.play();
 });
 
 botaoGelo.addEventListener("click", function () {
+  textoAtaque.textContent = "❄️ Cone of Cold!";
   textoAtaque.style.color = "blue";
 });
 
 botaoRelampago.addEventListener("click", function () {
+  textoAtaque.textContent = "⚡ Lightning Bolt!";
   textoAtaque.style.color = "yellow";
 });
 
 botaoForca.addEventListener("click", function () {
+  textoAtaque.textContent = "💪 Bigby's Hand!";
   textoAtaque.style.color = "orange";
 });
 
 botaoRadiante.addEventListener("click", function () {
+  textoAtaque.textContent = "✨ Guiding Bolt!";
   textoAtaque.style.color = "gold";
 });
 
 botaoEletricidade.addEventListener("click", function () {
+  textoAtaque.textContent = "⚡ Chain Lightning!";
   textoAtaque.style.color = "cyan";
 });
 
