@@ -26,6 +26,7 @@ const audioFireball = document.querySelector("#audio-fireball");
 const gifGelo = document.querySelector("#gif-gelo");
 const gifRelampago = document.querySelector("#gif-relampago");
 const gifForca = document.querySelector("#gif-forca");
+const gifRadiante = document.querySelector("#gif-radiante");
 
 botaoFogo.addEventListener("click", function () {
   textoAtaque.textContent = "🔥 Fireball!";
@@ -77,6 +78,12 @@ botaoForca.addEventListener("click", function () {
 botaoRadiante.addEventListener("click", function () {
   textoAtaque.textContent = "✨ Guiding Bolt!";
   textoAtaque.style.color = "gold";
+
+  gifRadiante.parentElement.style.display = "block";
+
+  setTimeout(function () {
+    gifRadiante.parentElement.style.display = "none";
+  }, 3000);
 });
 
 botaoEletricidade.addEventListener("click", function () {
