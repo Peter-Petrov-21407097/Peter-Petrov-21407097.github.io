@@ -23,6 +23,8 @@ const botaoRadiante = document.querySelector("#botao-radiante");
 const botaoEletricidade = document.querySelector("#botao-eletricidade");
 const gifFireball = document.querySelector("#gif-fireball");
 const audioFireball = document.querySelector("#audio-fireball");
+const gifGelo = document.querySelector("#gif-gelo");
+
 
 botaoFogo.addEventListener("click", function () {
   textoAtaque.textContent = "🔥 Fireball!";
@@ -41,6 +43,12 @@ botaoFogo.addEventListener("click", function () {
 botaoGelo.addEventListener("click", function () {
   textoAtaque.textContent = "❄️ Cone of Cold!";
   textoAtaque.style.color = "blue";
+
+  gifGelo.parentElement.style.display = "block";
+
+  setTimeout(function () {
+    gifGelo.parentElement.style.display = "none";
+  }, 3000);
 });
 
 botaoRelampago.addEventListener("click", function () {
