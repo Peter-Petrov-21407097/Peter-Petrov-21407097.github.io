@@ -25,6 +25,7 @@ const gifFireball = document.querySelector("#gif-fireball");
 const audioFireball = document.querySelector("#audio-fireball");
 const gifGelo = document.querySelector("#gif-gelo");
 const gifRelampago = document.querySelector("#gif-relampago");
+const gifForca = document.querySelector("#gif-forca");
 
 botaoFogo.addEventListener("click", function () {
   textoAtaque.textContent = "🔥 Fireball!";
@@ -65,6 +66,12 @@ botaoRelampago.addEventListener("click", function () {
 botaoForca.addEventListener("click", function () {
   textoAtaque.textContent = "💪 Bigby's Hand!";
   textoAtaque.style.color = "orange";
+
+  gifForca.parentElement.style.display = "block";
+
+  setTimeout(function () {
+    gifForca.parentElement.style.display = "none";
+  }, 3000);
 });
 
 botaoRadiante.addEventListener("click", function () {
