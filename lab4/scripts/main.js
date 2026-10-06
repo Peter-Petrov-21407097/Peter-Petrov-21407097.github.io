@@ -25,7 +25,6 @@ const gifFireball = document.querySelector("#gif-fireball");
 const audioFireball = document.querySelector("#audio-fireball");
 const gifGelo = document.querySelector("#gif-gelo");
 
-
 botaoFogo.addEventListener("click", function () {
   textoAtaque.textContent = "🔥 Fireball!";
   textoAtaque.style.color = "red";
