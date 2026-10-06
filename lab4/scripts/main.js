@@ -23,12 +23,21 @@ const botaoForca = document.querySelector("#botao-forca");
 const botaoRadiante = document.querySelector("#botao-radiante");
 const botaoEletricidade = document.querySelector("#botao-eletricidade");
 
+const gifFireball = document.querySelector("#gif-fireball");
+
+
 botaoFogo.addEventListener("click", function () {
   textoAtaque.textContent = "🔥 Fireball!";
   textoAtaque.style.color = "red";
 
+  gifFireball.parentElement.style.display = "block";
+
   audioFireball.currentTime = 0;
   audioFireball.play();
+
+  setTimeout(function () {
+    gifFireball.parentElement.style.display = "none";
+  }, 3000);
 });
 
 botaoGelo.addEventListener("click", function () {
