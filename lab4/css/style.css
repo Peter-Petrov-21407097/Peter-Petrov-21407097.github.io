@@ -78,3 +78,9 @@ main {
   width: 300px;
   max-width: 100%;
 }
+
+#gif-gelo,
+#gif-eletricidade {
+  width: 500px;
+  max-width: 100%;
+}
