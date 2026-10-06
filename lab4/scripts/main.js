@@ -27,6 +27,7 @@ const gifGelo = document.querySelector("#gif-gelo");
 const gifRelampago = document.querySelector("#gif-relampago");
 const gifForca = document.querySelector("#gif-forca");
 const gifRadiante = document.querySelector("#gif-radiante");
+const gifEletricidade = document.querySelector("#gif-eletricidade");
 
 botaoFogo.addEventListener("click", function () {
   textoAtaque.textContent = "🔥 Fireball!";
@@ -89,6 +90,12 @@ botaoRadiante.addEventListener("click", function () {
 botaoEletricidade.addEventListener("click", function () {
   textoAtaque.textContent = "⚡ Chain Lightning!";
   textoAtaque.style.color = "cyan";
+
+  gifEletricidade.parentElement.style.display = "block";
+
+  setTimeout(function () {
+    gifEletricidade.parentElement.style.display = "none";
+  }, 3000);
 });
 
 // EVENTO 3 — POÇÃO MÁGICA
