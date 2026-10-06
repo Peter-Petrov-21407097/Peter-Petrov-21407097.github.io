@@ -13,17 +13,17 @@ mensagemMago.addEventListener("mouseleave", function () {
 });
 
 // EVENTO 2 — CORES DOS ATAQUES
-const audioFireball = document.querySelector("#audio-fireball");
-const textoAtaque = document.querySelector("#texto-ataque");
 
+const textoAtaque = document.querySelector("#texto-ataque");
 const botaoFogo = document.querySelector("#botao-fogo");
 const botaoGelo = document.querySelector("#botao-gelo");
 const botaoRelampago = document.querySelector("#botao-relampago");
 const botaoForca = document.querySelector("#botao-forca");
 const botaoRadiante = document.querySelector("#botao-radiante");
 const botaoEletricidade = document.querySelector("#botao-eletricidade");
-
 const gifFireball = document.querySelector("#gif-fireball");
+const audioFireball = document.querySelector("#audio-fireball");
+
 
 
 botaoFogo.addEventListener("click", function () {
