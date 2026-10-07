@@ -21,28 +21,35 @@ const botaoRelampago = document.querySelector("#botao-relampago");
 const botaoForca = document.querySelector("#botao-forca");
 const botaoRadiante = document.querySelector("#botao-radiante");
 const botaoEletricidade = document.querySelector("#botao-eletricidade");
+
 const gifFireball = document.querySelector("#gif-fireball");
 const audioFireball = document.querySelector("#audio-fireball");
+const botaoAudioFireball = document.querySelector("#botao-audio-fireball");
 const gifGelo = document.querySelector("#gif-gelo");
 const gifRelampago = document.querySelector("#gif-relampago");
 const gifForca = document.querySelector("#gif-forca");
 const gifRadiante = document.querySelector("#gif-radiante");
 const gifEletricidade = document.querySelector("#gif-eletricidade");
 
+// BOTÃO DO ÁUDIO DA FIREBALL
+botaoAudioFireball.addEventListener("click", function () {
+  audioFireball.currentTime = 0;
+  audioFireball.play();
+});
+
+// ATAQUE — FOGO
 botaoFogo.addEventListener("click", function () {
   textoAtaque.textContent = "🔥 Fireball!";
   textoAtaque.style.color = "red";
 
   gifFireball.parentElement.style.display = "block";
 
-  audioFireball.currentTime = 0;
-  audioFireball.play();
-
   setTimeout(function () {
     gifFireball.parentElement.style.display = "none";
   }, 3000);
 });
 
+// ATAQUE — GELO
 botaoGelo.addEventListener("click", function () {
   textoAtaque.textContent = "❄️ Cone of Cold!";
   textoAtaque.style.color = "blue";
@@ -54,6 +61,7 @@ botaoGelo.addEventListener("click", function () {
   }, 3000);
 });
 
+// ATAQUE — RELÂMPAGO
 botaoRelampago.addEventListener("click", function () {
   textoAtaque.textContent = "⚡ Lightning Bolt!";
   textoAtaque.style.color = "yellow";
@@ -65,6 +73,7 @@ botaoRelampago.addEventListener("click", function () {
   }, 3000);
 });
 
+// ATAQUE — FORÇA
 botaoForca.addEventListener("click", function () {
   textoAtaque.textContent = "💪 Bigby's Hand!";
   textoAtaque.style.color = "orange";
@@ -76,6 +85,7 @@ botaoForca.addEventListener("click", function () {
   }, 3000);
 });
 
+// ATAQUE — RADIANTE
 botaoRadiante.addEventListener("click", function () {
   textoAtaque.textContent = "✨ Guiding Bolt!";
   textoAtaque.style.color = "gold";
@@ -87,6 +97,7 @@ botaoRadiante.addEventListener("click", function () {
   }, 3000);
 });
 
+// ATAQUE — ELETRICIDADE
 botaoEletricidade.addEventListener("click", function () {
   textoAtaque.textContent = "⚡ Chain Lightning!";
   textoAtaque.style.color = "cyan";
@@ -99,6 +110,7 @@ botaoEletricidade.addEventListener("click", function () {
 });
 
 // EVENTO 3 — POÇÃO MÁGICA
+
 const corPocao = document.querySelector("#cor-pocao");
 
 corPocao.addEventListener("input", function () {
@@ -106,6 +118,7 @@ corPocao.addEventListener("input", function () {
 });
 
 // EVENTO 4 — COR DA MAGIA
+
 const corMagica = document.querySelector("#cor-magica");
 const botaoMagia = document.querySelector("#botao-magia");
 const explosao = document.querySelector("#explosao");
@@ -121,6 +134,7 @@ botaoMagia.addEventListener("click", function () {
 });
 
 // EVENTO 5 — CONTADOR DE INIMIGOS
+
 let inimigosEsmagados = 33;
 
 const contadorInimigos = document.querySelector("#contador-inimigos");
