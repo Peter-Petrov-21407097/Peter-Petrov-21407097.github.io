@@ -147,9 +147,7 @@ botaoEsmagar.addEventListener("click", function () {
 
 // BOTÃO — COMEÇAR BATALHA
 
-const botaoComecarBatalha = document.querySelector(
-  "#botao-comecar-batalha",
-);
+const botaoComecarBatalha = document.querySelector("#botao-comecar-batalha");
 
 const audioBatalha = document.querySelector("#audio-batalha");
 
