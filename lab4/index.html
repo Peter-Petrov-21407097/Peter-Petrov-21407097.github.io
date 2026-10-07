@@ -137,7 +137,15 @@
           <div>
             <p id="contador-inimigos">33</p>
 
-            <button type="button" id="botao-esmagar">⚔️ Esmagar inimigo</button>
+            <div class="botoes-batalha">
+              <button type="button" id="botao-esmagar">
+                ⚔️ Esmagar inimigo
+              </button>
+
+              <button type="button" id="botao-comecar-batalha">
+                🔥 COMEÇAR BATALHA
+              </button>
+            </div>
           </div>
 
           <img
@@ -145,6 +153,10 @@
             alt="Batalha de D&amp;D com miniaturas"
           />
         </div>
+
+        <audio id="audio-batalha" loop>
+          <source src="audio/battle.mp3" type="audio/mpeg" />
+        </audio>
       </section>
     </main>
 
