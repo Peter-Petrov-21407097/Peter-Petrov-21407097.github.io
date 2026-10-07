@@ -144,3 +144,16 @@ botaoEsmagar.addEventListener("click", function () {
   inimigosEsmagados++;
   contadorInimigos.textContent = inimigosEsmagados;
 });
+
+// BOTÃO — COMEÇAR BATALHA
+
+const botaoComecarBatalha = document.querySelector(
+  "#botao-comecar-batalha",
+);
+
+const audioBatalha = document.querySelector("#audio-batalha");
+
+botaoComecarBatalha.addEventListener("click", function () {
+  audioBatalha.currentTime = 0;
+  audioBatalha.play();
+});
