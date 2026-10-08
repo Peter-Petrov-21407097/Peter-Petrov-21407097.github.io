@@ -155,3 +155,16 @@ botaoComecarBatalha.addEventListener("click", function () {
   audioBatalha.currentTime = 0;
   audioBatalha.play();
 });
+
+// BOTÃO — VITÓRIA
+
+const botaoVitoria = document.querySelector("#botao-vitoria");
+const audioVitoria = document.querySelector("#audio-vitoria");
+
+botaoVitoria.addEventListener("click", function () {
+  audioBatalha.pause();
+  audioBatalha.currentTime = 0;
+
+  audioVitoria.currentTime = 0;
+  audioVitoria.play();
+});
