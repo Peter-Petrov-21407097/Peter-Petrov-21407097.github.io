@@ -1,183 +1,184 @@
-<!doctype html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+const mensagemMago = document.querySelector("#mensagem-mago");
+const imagemBatalha = document.querySelector("#imagem-batalha");
 
-    <title>Lab 4 - JavaScript</title>
+// EVENTO 1 — FIREBALL
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+mensagemMago.addEventListener("mouseenter", function () {
+  mensagemMago.textContent = "🔥 Gandalf usa FIREBALL! 🔥";
+  imagemBatalha.src = "images/fireball.jpg";
+});
 
-  <body>
-    <header>
-      <h1>⚔️ Aventura do Grupo</h1>
-    </header>
+mensagemMago.addEventListener("mouseleave", function () {
+  mensagemMago.textContent = "🧙‍♂️ O mago está à espera do seu turno...";
+  imagemBatalha.src = "images/batalha.jpg";
+});
 
-    <main>
-      <h2>🧙 O Mago</h2>
+// EVENTO 2 — CORES DOS ATAQUES
 
-      <!-- EVENTO 1 -->
-      <section class="evento-mago">
-        <h3>🧙 O Mago</h3>
+const textoAtaque = document.querySelector("#texto-ataque");
 
-        <div class="mago-conteudo">
-          <p id="mensagem-mago">🧙‍♂️ O mago está à espera do seu turno...</p>
+const botaoFogo = document.querySelector("#botao-fogo");
+const botaoGelo = document.querySelector("#botao-gelo");
+const botaoRelampago = document.querySelector("#botao-relampago");
+const botaoForca = document.querySelector("#botao-forca");
+const botaoRadiante = document.querySelector("#botao-radiante");
+const botaoEletricidade = document.querySelector("#botao-eletricidade");
 
-          <img
-            id="imagem-batalha"
-            src="images/batalha.jpg"
-            alt="Batalha de D&amp;D com miniaturas"
-          />
-        </div>
-      </section>
+const gifFireball = document.querySelector("#gif-fireball");
+const gifGelo = document.querySelector("#gif-gelo");
+const gifRelampago = document.querySelector("#gif-relampago");
+const gifForca = document.querySelector("#gif-forca");
+const gifRadiante = document.querySelector("#gif-radiante");
+const gifEletricidade = document.querySelector("#gif-eletricidade");
 
-      <!-- EVENTO 2 -->
-      <section class="evento-ataques">
-        <h3>⚔️ Escolhe o tipo de ataque</h3>
+const audioFireball = document.querySelector("#audio-fireball");
+const botaoAudioFireball = document.querySelector("#botao-audio-fireball");
 
-        <p id="texto-ataque">🧙‍♂️ O mago prepara o seu próximo ataque...</p>
+// BOTÃO DO ÁUDIO DA FIREBALL
 
-        <div class="botoes-ataque">
-          <button type="button" id="botao-fogo">🔥 Fogo</button>
+botaoAudioFireball.addEventListener("click", function () {
+  audioFireball.currentTime = 0;
+  audioFireball.play();
+});
 
-          <button type="button" id="botao-gelo">❄️ Gelo</button>
+// ATAQUE — FOGO
 
-          <button type="button" id="botao-relampago">⚡ Relâmpago</button>
+botaoFogo.addEventListener("click", function () {
+  textoAtaque.textContent = "🔥 Fireball!";
+  textoAtaque.style.color = "red";
 
-          <button type="button" id="botao-forca">💪 Força</button>
+  gifFireball.parentElement.style.display = "block";
 
-          <button type="button" id="botao-radiante">✨ Radiante</button>
+  setTimeout(function () {
+    gifFireball.parentElement.style.display = "none";
+  }, 3000);
+});
 
-          <button type="button" id="botao-eletricidade">
-            ⚡ Eletricidade
-          </button>
+// ATAQUE — GELO
 
-          <button type="button" id="botao-audio-fireball">
-            🔊 Ouvir som da Fireball
-          </button>
-        </div>
+botaoGelo.addEventListener("click", function () {
+  textoAtaque.textContent = "❄️ Cone of Cold!";
+  textoAtaque.style.color = "blue";
 
-        <div class="fireball-container">
-          <img
-            id="gif-fireball"
-            src="images/fireball-cast.gif"
-            alt="Fireball a ser lançada"
-          />
-        </div>
+  gifGelo.parentElement.style.display = "block";
 
-        <div class="fireball-container">
-          <img
-            id="gif-gelo"
-            src="images/cone-of-cold-dungeons-and-dragons.gif"
-            alt="Cone of Cold a ser lançado"
-          />
-        </div>
+  setTimeout(function () {
+    gifGelo.parentElement.style.display = "none";
+  }, 3000);
+});
 
-        <div class="fireball-container">
-          <img
-            id="gif-relampago"
-            src="images/lightning-bolt.gif"
-            alt="Lightning Bolt a ser lançado"
-          />
-        </div>
+// ATAQUE — RELÂMPAGO
 
-        <div class="fireball-container">
-          <img
-            id="gif-forca"
-            src="images/Force.webp"
-            alt="Bigby's Hand a ser lançada"
-          />
-        </div>
+botaoRelampago.addEventListener("click", function () {
+  textoAtaque.textContent = "⚡ Lightning Bolt!";
+  textoAtaque.style.color = "yellow";
 
-        <div class="fireball-container">
-          <img
-            id="gif-radiante"
-            src="images/guiding_bolt.gif"
-            alt="Guiding Bolt a ser lançado"
-          />
-        </div>
+  gifRelampago.parentElement.style.display = "block";
 
-        <div class="fireball-container">
-          <img
-            id="gif-eletricidade"
-            src="images/chain-ligthing.gif"
-            alt="Chain Lightning a ser lançado"
-          />
-        </div>
+  setTimeout(function () {
+    gifRelampago.parentElement.style.display = "none";
+  }, 3000);
+});
 
-        <audio id="audio-fireball">
-          <source src="audio/fireball.mp3" type="audio/mpeg" />
-        </audio>
-      </section>
+// ATAQUE — FORÇA
 
-      <!-- EVENTO 3 -->
-      <section class="evento-pocao">
-        <h3>🧪 Poção mágica</h3>
+botaoForca.addEventListener("click", function () {
+  textoAtaque.textContent = "💪 Bigby's Hand!";
+  textoAtaque.style.color = "orange";
 
-        <p>Escreve uma cor e observa a poção mudar:</p>
+  gifForca.parentElement.style.display = "block";
 
-        <input
-          type="text"
-          id="cor-pocao"
-          placeholder="Escreve uma cor..."
-        />
-      </section>
+  setTimeout(function () {
+    gifForca.parentElement.style.display = "none";
+  }, 3000);
+});
 
-      <!-- EVENTO 4 -->
-      <section class="evento-cor">
-        <h3>🎨 Cor da magia</h3>
+// ATAQUE — RADIANTE
 
-        <p>Escreve uma cor em inglês:</p>
+botaoRadiante.addEventListener("click", function () {
+  textoAtaque.textContent = "✨ Guiding Bolt!";
+  textoAtaque.style.color = "gold";
 
-        <input
-          type="text"
-          id="cor-magica"
-          placeholder="Ex: red, blue, purple..."
-        />
+  gifRadiante.parentElement.style.display = "block";
 
-        <button type="button" id="botao-magia">✨ Lançar magia</button>
+  setTimeout(function () {
+    gifRadiante.parentElement.style.display = "none";
+  }, 3000);
+});
 
-        <p id="explosao">💥</p>
-      </section>
+// ATAQUE — ELETRICIDADE
 
-      <!-- EVENTO 5 -->
-      <section class="evento-contador">
-        <h3>💀 Inimigos esmagados</h3>
+botaoEletricidade.addEventListener("click", function () {
+  textoAtaque.textContent = "⚡ Chain Lightning!";
+  textoAtaque.style.color = "cyan";
 
-        <div class="contador-conteudo">
-          <div>
-            <p id="contador-inimigos">33</p>
+  gifEletricidade.parentElement.style.display = "block";
 
-            <div class="botoes-batalha">
-              <button type="button" id="botao-esmagar">
-                ⚔️ Esmagar inimigo
-              </button>
+  setTimeout(function () {
+    gifEletricidade.parentElement.style.display = "none";
+  }, 3000);
+});
 
-              <button type="button" id="botao-comecar-batalha">
-                🔥 COMEÇAR BATALHA
-              </button>
+// EVENTO 3 — POÇÃO MÁGICA
 
-              <button type="button" id="botao-vitoria">🏆 VITÓRIA</button>
-            </div>
-          </div>
+const corPocao = document.querySelector("#cor-pocao");
 
-          <img
-            src="images/batalha.jpg"
-            alt="Batalha de D&amp;D com miniaturas"
-          />
-        </div>
+corPocao.addEventListener("input", function () {
+  corPocao.style.backgroundColor = corPocao.value;
+});
 
-        <audio id="audio-batalha" loop>
-          <source src="audio/battle.mp3" type="audio/mpeg" />
-        </audio>
+// EVENTO 4 — COR DA MAGIA
 
-        <audio id="audio-vitoria">
-          <source src="audio/vitoria.mp3" type="audio/mpeg" />
-        </audio>
-      </section>
-    </main>
+const corMagica = document.querySelector("#cor-magica");
+const botaoMagia = document.querySelector("#botao-magia");
+const explosao = document.querySelector("#explosao");
 
-    <script src="scripts/main.js"></script>
-  </body>
-</html>
+botaoMagia.addEventListener("click", function () {
+  document.body.style.backgroundColor = corMagica.value;
+
+  explosao.classList.add("explosao-ativa");
+
+  setTimeout(function () {
+    explosao.classList.remove("explosao-ativa");
+  }, 500);
+});
+
+// EVENTO 5 — CONTADOR DE INIMIGOS
+
+let inimigosEsmagados = 33;
+
+const contadorInimigos = document.querySelector("#contador-inimigos");
+const botaoEsmagar = document.querySelector("#botao-esmagar");
+
+botaoEsmagar.addEventListener("click", function () {
+  inimigosEsmagados++;
+  contadorInimigos.textContent = inimigosEsmagados;
+});
+
+// ÁUDIOS DA BATALHA E DA VITÓRIA
+
+const botaoComecarBatalha = document.querySelector("#botao-comecar-batalha");
+const audioBatalha = document.querySelector("#audio-batalha");
+
+const botaoVitoria = document.querySelector("#botao-vitoria");
+const audioVitoria = document.querySelector("#audio-vitoria");
+
+// BOTÃO — COMEÇAR BATALHA
+
+botaoComecarBatalha.addEventListener("click", function () {
+  audioVitoria.pause();
+  audioVitoria.currentTime = 0;
+
+  audioBatalha.currentTime = 0;
+  audioBatalha.play();
+});
+
+// BOTÃO — VITÓRIA
+
+botaoVitoria.addEventListener("click", function () {
+  audioBatalha.pause();
+  audioBatalha.currentTime = 0;
+
+  audioVitoria.currentTime = 0;
+  audioVitoria.play();
+});
