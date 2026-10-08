@@ -169,7 +169,9 @@ botaoComecarBatalha.addEventListener("click", function () {
   audioVitoria.pause();
   audioVitoria.currentTime = 0;
 
+  audioBatalha.pause();
   audioBatalha.currentTime = 0;
+
   audioBatalha.play();
 });
 
@@ -179,6 +181,8 @@ botaoVitoria.addEventListener("click", function () {
   audioBatalha.pause();
   audioBatalha.currentTime = 0;
 
+  audioVitoria.pause();
   audioVitoria.currentTime = 0;
+
   audioVitoria.play();
 });
