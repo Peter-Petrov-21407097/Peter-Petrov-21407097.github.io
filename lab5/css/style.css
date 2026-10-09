@@ -1,0 +1,100 @@
+```css
+/* ESTILO GERAL */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #eee;
+}
+
+/* CABEÇALHO */
+
+header {
+  background-color: #063;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+main {
+  background-color: white;
+  margin: 20px;
+  padding: 30px;
+}
+
+/* EXERCÍCIO 1 — O BÁRBARO */
+
+.evento-barbaro {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#texto-rage {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.botoes-cores {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.botoes-cores button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* EXERCÍCIO 2 — POÇÕES DE CURA */
+
+.evento-pocao {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#texto-pocao {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#nome-pocao {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-top: 8px;
+  border: 2px solid #999;
+  border-radius: 8px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dica-pocao {
+  color: #666;
+  font-size: 14px;
+}
+
+/* CORES DAS POÇÕES */
+
+.pocao-healing {
+  background-color: #ffe5e5 !important;
+}
+
+.pocao-greater {
+  background-color: #ffb3b3 !important;
+}
+
+.pocao-superior {
+  background-color: #ff6666 !important;
+}
+
+.pocao-supreme {
+  background-color: #ff1a1a !important;
+}
+```
