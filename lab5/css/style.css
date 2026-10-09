@@ -148,7 +148,7 @@ body.dano-fogo {
 }
 
 body.dano-gelo {
-  background: linear-gradient(135deg, #003366, #00bfff, #e0ffff);
+  background: linear-gradient(135deg, #036, #00bfff, #e0ffff);
 }
 
 body.dano-eletricidade {
@@ -176,7 +176,7 @@ body.dano-perfurante {
 }
 
 body.dano-cortante {
-  background: linear-gradient(135deg, #330000, #990000, #d9a0a0);
+  background: linear-gradient(135deg, #300, #900, #d9a0a0);
 }
 
 body.dano-trovejante {
