@@ -40,18 +40,25 @@ const botoesCartas = document.querySelectorAll("button.carta-dano");
 const botaoResetDano = document.querySelector("#reset-dano");
 
 // CLICAR NUMA CARTA
+
+let fundoDano = document.querySelector("#fundo-dano");
+
+if (!fundoDano) {
+  fundoDano = document.createElement("img");
+  fundoDano.id = "fundo-dano";
+  fundoDano.alt = "";
+  fundoDano.setAttribute("aria-hidden", "true");
+  document.body.prepend(fundoDano);
+}
+
 botoesCartas.forEach((carta) => {
   carta.addEventListener("click", () => {
     const dano = carta.dataset.dano;
     const imagem = carta.querySelector("img").getAttribute("src");
 
-    // Colocar a fotografia como fundo da página
-    document.body.className = `dano-${dano}`;
-    document.body.style.backgroundImage = `url("${imagem}")`;
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundRepeat = "no-repeat";
+    // Mostrar a fotografia numa camada própria
+    fundoDano.src = imagem;
+    fundoDano.style.display = "block";
 
     // Destacar a carta selecionada
     botoesCartas.forEach((outraCarta) => {
@@ -61,7 +68,8 @@ botoesCartas.forEach((carta) => {
     carta.classList.add("selecionada");
 
     // Mostrar o resultado
-    resultadoDano.textContent = `O Bárbaro sofreu dano de ${carta.querySelector(".nome-dano").textContent}!`;
+    resultadoDano.textContent =
+      `O Bárbaro sofreu dano de ${carta.querySelector(".nome-dano").textContent}!`;
   });
 });
 
@@ -78,17 +86,17 @@ document.querySelectorAll("button.dano").forEach((botao) => {
 });
 
 // RESTAURAR O FUNDO ORIGINAL
+
 botaoResetDano.addEventListener("click", () => {
+  fundoDano.removeAttribute("src");
+  fundoDano.style.display = "none";
+
   document.body.className = "";
-  document.body.style.backgroundImage = "";
-  document.body.style.backgroundSize = "";
-  document.body.style.backgroundPosition = "";
-  document.body.style.backgroundAttachment = "";
-  document.body.style.backgroundRepeat = "";
 
   botoesCartas.forEach((carta) => {
     carta.classList.remove("selecionada");
   });
 
-  resultadoDano.textContent = "Escolhe um tipo de dano para ver o efeito!";
+  resultadoDano.textContent =
+    "Escolhe um tipo de dano para ver o efeito!";
 });

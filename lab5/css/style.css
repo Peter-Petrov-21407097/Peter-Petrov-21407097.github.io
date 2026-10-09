@@ -319,3 +319,28 @@ body.dano-contundente {
     font-size: 22px;
   }
 }
+
+/* FOTOGRAFIA DE FUNDO EM CAMADA SEPARADA */
+
+#fundo-dano {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+/* DEIXAR A FOTOGRAFIA VISÍVEL ATRÁS DO CONTEÚDO */
+
+main {
+  background-color: transparent;
+}
+
+.evento-barbaro,
+.evento-pocao,
+.evento-dano {
+  background-color: rgb(245 245 245 / 35%);
+}
