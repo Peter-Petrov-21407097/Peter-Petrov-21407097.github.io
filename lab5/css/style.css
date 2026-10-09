@@ -131,14 +131,25 @@ main {
   background-color: white;
 }
 
-.botoes-dano button:hover,
-#reset-dano:hover {
-  filter: brightness(0.9);
-}
-
 #resultado-dano {
   margin-top: 20px;
   font-weight: bold;
+}
+
+/* BOTÃO PARA RESTAURAR */
+
+#reset-dano {
+  margin-top: 10px;
+  background-color: #063;
+  color: white;
+  border: none;
+}
+
+/* EFEITO AO PASSAR O RATO */
+
+.botoes-dano button:hover,
+#reset-dano:hover {
+  filter: brightness(0.9);
 }
 
 /* FUNDOS DOS TIPOS DE DANO */
@@ -193,20 +204,4 @@ body.dano-psiquico {
 
 body.dano-contundente {
   background: linear-gradient(135deg, #382719, #8b7355, #d2b48c);
-}
-
-/* BOTÃO PARA RESTAURAR */
-
-#reset-dano {
-  margin-top: 10px;
-  background-color: #063;
-  color: white;
-  border: none;
-}
-
-/* EFEITO AO PASSAR O RATO */
-
-.botoes-dano button:hover,
-#reset-dano:hover {
-  filter: brightness(0.9);
 }
