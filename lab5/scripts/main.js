@@ -1,4 +1,4 @@
-```javascript
+
 // EXERCÍCIO 1 — O BÁRBARO
 
 const textoRage = document.querySelector("#texto-rage");
