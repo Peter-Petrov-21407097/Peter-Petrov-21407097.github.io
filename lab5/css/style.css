@@ -26,7 +26,7 @@ header {
 main {
   position: relative;
   z-index: 1;
-  background-color: rgb(255 255 255 / 75%);
+  background-color: transparent;
   margin: 20px;
   padding: 30px;
 }
@@ -334,10 +334,6 @@ body.dano-contundente {
 }
 
 /* DEIXAR A FOTOGRAFIA VISÍVEL ATRÁS DO CONTEÚDO */
-
-main {
-  background-color: transparent;
-}
 
 .evento-barbaro,
 .evento-pocao,

@@ -53,7 +53,6 @@ if (!fundoDano) {
 
 botoesCartas.forEach((carta) => {
   carta.addEventListener("click", () => {
-    const dano = carta.dataset.dano;
     const imagem = carta.querySelector("img").getAttribute("src");
 
     // Mostrar a fotografia numa camada própria
@@ -68,8 +67,7 @@ botoesCartas.forEach((carta) => {
     carta.classList.add("selecionada");
 
     // Mostrar o resultado
-    resultadoDano.textContent =
-      `O Bárbaro sofreu dano de ${carta.querySelector(".nome-dano").textContent}!`;
+    resultadoDano.textContent = `O Bárbaro sofreu dano de ${carta.querySelector(".nome-dano").textContent}!`;
   });
 });
 
@@ -97,6 +95,5 @@ botaoResetDano.addEventListener("click", () => {
     carta.classList.remove("selecionada");
   });
 
-  resultadoDano.textContent =
-    "Escolhe um tipo de dano para ver o efeito!";
+  resultadoDano.textContent = "Escolhe um tipo de dano para ver o efeito!";
 });
