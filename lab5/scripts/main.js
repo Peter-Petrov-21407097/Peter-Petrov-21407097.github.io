@@ -61,8 +61,7 @@ botoesCartas.forEach((carta) => {
     carta.classList.add("selecionada");
 
     // Mostrar o resultado
-    resultadoDano.textContent =
-      `O Bárbaro sofreu dano de ${carta.querySelector(".nome-dano").textContent}!`;
+    resultadoDano.textContent = `O Bárbaro sofreu dano de ${carta.querySelector(".nome-dano").textContent}!`;
   });
 });
 
@@ -70,9 +69,7 @@ botoesCartas.forEach((carta) => {
 document.querySelectorAll("button.dano").forEach((botao) => {
   botao.addEventListener("click", () => {
     const dano = botao.dataset.dano;
-    const carta = document.querySelector(
-      `.carta-dano[data-dano="${dano}"]`,
-    );
+    const carta = document.querySelector(`.carta-dano[data-dano="${dano}"]`);
 
     if (carta) {
       carta.click();
@@ -93,6 +90,5 @@ botaoResetDano.addEventListener("click", () => {
     carta.classList.remove("selecionada");
   });
 
-  resultadoDano.textContent =
-    "Escolhe um tipo de dano para ver o efeito!";
+  resultadoDano.textContent = "Escolhe um tipo de dano para ver o efeito!";
 });
