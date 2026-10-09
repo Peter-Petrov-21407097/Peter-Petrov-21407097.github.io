@@ -203,3 +203,10 @@ body.dano-contundente {
   color: white;
   border: none;
 }
+
+/* EFEITO AO PASSAR O RATO */
+
+.botoes-dano button:hover,
+#reset-dano:hover {
+  filter: brightness(0.9);
+}
