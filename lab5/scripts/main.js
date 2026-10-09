@@ -32,3 +32,28 @@ nomePocao.addEventListener("input", () => {
     nomePocao.classList.add("pocao-supreme");
   }
 });
+
+// EXERCÍCIO 3 — TIPOS DE DANO
+
+const resultadoDano = document.querySelector("#resultado-dano");
+
+document.querySelectorAll("button.dano").forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const dano = botao.dataset.dano;
+
+    document.body.className = `dano-${dano}`;
+
+    resultadoDano.textContent =
+      `O Bárbaro sofreu dano de ${botao.textContent.trim()}!`;
+  });
+});
+
+// RESTAURAR O FUNDO ORIGINAL
+
+const botaoResetDano = document.querySelector("#reset-dano");
+
+botaoResetDano.addEventListener("click", () => {
+  document.body.className = "";
+  resultadoDano.textContent =
+    "Escolhe um tipo de dano para ver o efeito!";
+});

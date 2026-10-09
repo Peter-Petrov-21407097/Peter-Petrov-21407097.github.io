@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #eee;
+  transition: background 0.4s ease;
 }
 
 /* CABEÇALHO */
@@ -49,3 +50,156 @@ main {
 }
 
 /* EXERCÍCIO 2 — POÇÕES DE CURA */
+
+.evento-pocao {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#texto-pocao {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#nome-pocao {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-top: 8px;
+  border: 2px solid #999;
+  border-radius: 8px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dica-pocao {
+  color: #666;
+  font-size: 14px;
+}
+
+/* CORES DAS POÇÕES */
+
+.pocao-healing {
+  background-color: #ffe5e5 !important;
+}
+
+.pocao-greater {
+  background-color: #ffb3b3 !important;
+}
+
+.pocao-superior {
+  background-color: #f66 !important;
+}
+
+.pocao-supreme {
+  background-color: #ff1a1a !important;
+}
+
+/* EXERCÍCIO 3 — TIPOS DE DANO */
+
+.evento-dano {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#texto-dano {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.botoes-dano {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.botoes-dano button,
+#reset-dano {
+  padding: 10px 14px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.botoes-dano button {
+  background-color: white;
+}
+
+.botoes-dano button:hover,
+#reset-dano:hover {
+  filter: brightness(0.9);
+}
+
+#resultado-dano {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* FUNDOS DOS TIPOS DE DANO */
+
+body.dano-fogo {
+  background: linear-gradient(135deg, #7f0000, #ff4500, #ffb000);
+}
+
+body.dano-gelo {
+  background: linear-gradient(135deg, #003366, #00bfff, #e0ffff);
+}
+
+body.dano-eletricidade {
+  background: linear-gradient(135deg, #160044, #5426a8, #00bfff);
+}
+
+body.dano-veneno {
+  background: linear-gradient(135deg, #123500, #398000, #a5d600);
+}
+
+body.dano-acido {
+  background: linear-gradient(135deg, #254000, #a0c900, #eaff70);
+}
+
+body.dano-forca {
+  background: linear-gradient(135deg, #191970, #4169e1, #c0c0ff);
+}
+
+body.dano-necrotico {
+  background: linear-gradient(135deg, #080808, #34203f, #673b70);
+}
+
+body.dano-perfurante {
+  background: linear-gradient(135deg, #424242, #a8a8a8, #e0e0e0);
+}
+
+body.dano-cortante {
+  background: linear-gradient(135deg, #330000, #990000, #d9a0a0);
+}
+
+body.dano-trovejante {
+  background: linear-gradient(135deg, #292929, #646464, #d4d4d4);
+}
+
+body.dano-radiante {
+  background: linear-gradient(135deg, #806000, #ffd700, #fff8dc);
+}
+
+body.dano-psiquico {
+  background: linear-gradient(135deg, #35004f, #b000b5, #ffb3ff);
+}
+
+body.dano-contundente {
+  background: linear-gradient(135deg, #382719, #8b7355, #d2b48c);
+}
+
+/* BOTÃO PARA RESTAURAR */
+
+#reset-dano {
+  margin-top: 10px;
+  background-color: #063;
+  color: white;
+  border: none;
+}
