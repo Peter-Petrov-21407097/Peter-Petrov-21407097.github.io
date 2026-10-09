@@ -33,4 +33,3 @@ nomePocao.addEventListener("input", () => {
     nomePocao.classList.add("pocao-supreme");
   }
 });
-

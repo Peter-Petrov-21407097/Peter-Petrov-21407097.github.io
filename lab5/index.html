@@ -26,11 +26,41 @@
 
         <div class="botoes-cores">
           <button type="button" class="color" data-color="red">Vermelho</button>
+
           <button type="button" class="color" data-color="blue">Azul</button>
+
           <button type="button" class="color" data-color="gray">
             Cinzento
           </button>
         </div>
+      </section>
+
+      <!-- EXERCÍCIO 2 — POÇÕES DE CURA -->
+
+      <section class="evento-pocao">
+        <h3>🧪 Poções de Cura</h3>
+
+        <p id="texto-pocao">O Bárbaro está ferido! Usa uma poção!!</p>
+
+        <label for="nome-pocao">Nome da poção:</label>
+
+        <input
+          type="text"
+          id="nome-pocao"
+          list="lista-pocoes"
+          placeholder="Escreve o nome de uma poção..."
+        />
+
+        <datalist id="lista-pocoes">
+          <option value="Potion of Healing"></option>
+          <option value="Potion of Healing (Greater)"></option>
+          <option value="Potion of Healing (Superior)"></option>
+          <option value="Potion of Healing (Supreme)"></option>
+        </datalist>
+
+        <p class="dica-pocao">
+          💡 Sugestões: Healing, Greater, Superior ou Supreme.
+        </p>
       </section>
     </main>
 
