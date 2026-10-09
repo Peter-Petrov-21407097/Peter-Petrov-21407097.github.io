@@ -36,22 +36,63 @@ nomePocao.addEventListener("input", () => {
 // EXERCÍCIO 3 — TIPOS DE DANO
 
 const resultadoDano = document.querySelector("#resultado-dano");
+const botoesCartas = document.querySelectorAll("button.carta-dano");
+const botaoResetDano = document.querySelector("#reset-dano");
 
+// CLICAR NUMA CARTA
+botoesCartas.forEach((carta) => {
+  carta.addEventListener("click", () => {
+    const dano = carta.dataset.dano;
+    const imagem = carta.querySelector("img").getAttribute("src");
+
+    // Colocar a fotografia como fundo da página
+    document.body.className = `dano-${dano}`;
+    document.body.style.backgroundImage = `url("${imagem}")`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+
+    // Destacar a carta selecionada
+    botoesCartas.forEach((outraCarta) => {
+      outraCarta.classList.remove("selecionada");
+    });
+
+    carta.classList.add("selecionada");
+
+    // Mostrar o resultado
+    resultadoDano.textContent =
+      `O Bárbaro sofreu dano de ${carta.querySelector(".nome-dano").textContent}!`;
+  });
+});
+
+// BOTÕES DE DANO EXISTENTES
 document.querySelectorAll("button.dano").forEach((botao) => {
   botao.addEventListener("click", () => {
     const dano = botao.dataset.dano;
+    const carta = document.querySelector(
+      `.carta-dano[data-dano="${dano}"]`,
+    );
 
-    document.body.className = `dano-${dano}`;
-
-    resultadoDano.textContent = `O Bárbaro sofreu dano de ${botao.textContent.trim()}!`;
+    if (carta) {
+      carta.click();
+    }
   });
 });
 
 // RESTAURAR O FUNDO ORIGINAL
-
-const botaoResetDano = document.querySelector("#reset-dano");
-
 botaoResetDano.addEventListener("click", () => {
   document.body.className = "";
-  resultadoDano.textContent = "Escolhe um tipo de dano para ver o efeito!";
+  document.body.style.backgroundImage = "";
+  document.body.style.backgroundSize = "";
+  document.body.style.backgroundPosition = "";
+  document.body.style.backgroundAttachment = "";
+  document.body.style.backgroundRepeat = "";
+
+  botoesCartas.forEach((carta) => {
+    carta.classList.remove("selecionada");
+  });
+
+  resultadoDano.textContent =
+    "Escolhe um tipo de dano para ver o efeito!";
 });
