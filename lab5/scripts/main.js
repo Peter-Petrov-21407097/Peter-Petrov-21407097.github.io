@@ -43,8 +43,7 @@ document.querySelectorAll("button.dano").forEach((botao) => {
 
     document.body.className = `dano-${dano}`;
 
-    resultadoDano.textContent =
-      `O Bárbaro sofreu dano de ${botao.textContent.trim()}!`;
+    resultadoDano.textContent = `O Bárbaro sofreu dano de ${botao.textContent.trim()}!`;
   });
 });
 
@@ -54,6 +53,5 @@ const botaoResetDano = document.querySelector("#reset-dano");
 
 botaoResetDano.addEventListener("click", () => {
   document.body.className = "";
-  resultadoDano.textContent =
-    "Escolhe um tipo de dano para ver o efeito!";
+  resultadoDano.textContent = "Escolhe um tipo de dano para ver o efeito!";
 });
