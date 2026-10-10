@@ -205,6 +205,15 @@ main {
 
 /* BOTÕES DE DANO */
 
+.botoes-formacao button {
+  padding: 10px 14px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
 .botoes-dano {
   display: flex;
   flex-wrap: wrap;
@@ -431,15 +440,6 @@ body.dano-contundente {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 15px;
-}
-
-.botoes-formacao button {
-  padding: 10px 14px;
-  border: 1px solid #999;
-  border-radius: 6px;
-  background-color: white;
-  cursor: pointer;
-  font-size: 15px;
 }
 
 .botoes-formacao button:hover {
