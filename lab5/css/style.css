@@ -387,7 +387,6 @@ body.dano-contundente {
 }
 
 /* CAMADA DAS PERSONAGENS */
-
 #formacao-personagens {
   position: absolute;
   inset: 0;
@@ -398,8 +397,7 @@ body.dano-contundente {
   pointer-events: none;
 }
 
-/* CADA PERSONAGEM OCUPA UMA QUADRÍCULA */
-
+/* CADA PERSONAGEM */
 .marcador-personagem {
   display: block;
   width: 8%;
@@ -407,6 +405,7 @@ body.dano-contundente {
   max-height: 25%;
   object-fit: contain;
   flex: 0 0 8%;
+  margin: -0.5%;
 }
 
 /* FORMAÇÃO EM LINHA */
