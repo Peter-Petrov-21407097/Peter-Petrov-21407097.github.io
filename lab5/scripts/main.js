@@ -97,3 +97,53 @@ botaoResetDano.addEventListener("click", () => {
 
   resultadoDano.textContent = "Escolhe um tipo de dano para ver o efeito!";
 });
+
+// EXERCÍCIO 4 — TABULEIRO DE D&D
+
+const seletorMapa = document.querySelector("#seletor-mapa");
+const mapaBatalha = document.querySelector("#mapa-batalha");
+const formacaoPersonagens = document.querySelector("#formacao-personagens");
+const botoesFormacao = document.querySelectorAll("button[data-formacao]");
+
+// Mapas disponíveis
+const mapasBatalha = {
+  praia: {
+    src: "images/praia.jpg",
+    alt: "Mapa de batalha da praia",
+  },
+  cidade: {
+    src: "images/cidade.jpg",
+    alt: "Mapa de batalha da cidade",
+  },
+  floresta: {
+    src: "images/floresta.jpg",
+    alt: "Mapa de batalha da floresta",
+  },
+};
+
+// Alterar o mapa selecionado
+seletorMapa.addEventListener("change", () => {
+  const mapa = mapasBatalha[seletorMapa.value];
+
+  if (mapa) {
+    mapaBatalha.src = mapa.src;
+    mapaBatalha.alt = mapa.alt;
+  }
+});
+
+// Classes correspondentes às quatro formações
+const classesFormacao = [
+  "formacao-linha",
+  "formacao-linha-invertida",
+  "formacao-coluna",
+  "formacao-coluna-invertida",
+];
+
+// Alterar a formação dos personagens
+botoesFormacao.forEach((botao) => {
+  botao.addEventListener("click", () => {
+    formacaoPersonagens.classList.remove(...classesFormacao);
+
+    formacaoPersonagens.classList.add(`formacao-${botao.dataset.formacao}`);
+  });
+});

@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Lab 5 - JavaScript Parte 2</title>
-
+    <title>Lab 5 - Aventura do Bárbaro</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -21,13 +19,11 @@
       <section class="evento-barbaro">
         <h3>🪓 O Bárbaro</h3>
 
-        <p id="texto-rage">🪓 Gostaria de entrar em RAGE!!!!!!!</p>
+        <p id="texto-rage">🪓 Gostaria de entrar em RAGE!!!!!!!!</p>
 
         <div class="botoes-cores">
           <button type="button" class="color" data-color="red">Vermelho</button>
-
           <button type="button" class="color" data-color="blue">Azul</button>
-
           <button type="button" class="color" data-color="gray">
             Cinzento
           </button>
@@ -41,7 +37,6 @@
         <p id="texto-pocao">O Bárbaro está ferido! Usa uma poção!!</p>
 
         <label for="nome-pocao">Nome da poção:</label>
-
         <input
           type="text"
           id="nome-pocao"
@@ -69,7 +64,6 @@
           ⚔️ O Bárbaro leva um ataque! Que tipo de dano sofreu?
         </p>
 
-        <!-- CARTAS COM MINIATURAS -->
         <div class="cartas-dano">
           <button type="button" class="carta-dano" data-dano="fogo">
             <img src="images/1.jpg" alt="Miniatura de Fogo" />
@@ -150,7 +144,6 @@
           </button>
         </div>
 
-        <!-- BOTÕES DE DANO EXISTENTES -->
         <div class="botoes-dano">
           <button type="button" class="dano" data-dano="fogo">🔥 Fogo</button>
           <button type="button" class="dano" data-dano="gelo">❄️ Gelo</button>
@@ -188,6 +181,74 @@
         <p id="resultado-dano">Escolhe um tipo de dano para ver o efeito!</p>
 
         <button type="button" id="reset-dano">Restaurar fundo original</button>
+      </section>
+
+      <!-- EXERCÍCIO 4 — TABULEIRO DE D&D -->
+      <section class="evento-tabuleiro">
+        <h3>🗺️ Tabuleiro de D&D</h3>
+
+        <p>Escolhe um campo de batalha:</p>
+
+        <label for="seletor-mapa">Mapa:</label>
+        <select id="seletor-mapa">
+          <option value="praia">Praia</option>
+          <option value="cidade" selected>Cidade</option>
+          <option value="floresta">Floresta</option>
+        </select>
+
+        <div id="tabuleiro" class="tabuleiro">
+          <img
+            id="mapa-batalha"
+            src="images/cidade.jpg"
+            alt="Mapa de batalha da cidade"
+          />
+
+          <div id="formacao-personagens" class="formacao-linha">
+            <img
+              class="marcador-personagem"
+              src="images/barbaro.png"
+              alt="Bárbaro"
+              title="Bárbaro"
+            />
+
+            <img
+              class="marcador-personagem"
+              src="images/clerigo.png"
+              alt="Clérigo"
+              title="Clérigo"
+            />
+
+            <img
+              class="marcador-personagem"
+              src="images/wizard.png"
+              alt="Wizard"
+              title="Wizard"
+            />
+
+            <img
+              class="marcador-personagem"
+              src="images/sorceress.png"
+              alt="Sorceress"
+              title="Sorceress"
+            />
+          </div>
+        </div>
+
+        <h4>Formações de batalha</h4>
+
+        <div class="botoes-formacao">
+          <button type="button" data-formacao="linha">Formação linha</button>
+
+          <button type="button" data-formacao="linha-invertida">
+            Formação linha invertida
+          </button>
+
+          <button type="button" data-formacao="coluna">Formação coluna</button>
+
+          <button type="button" data-formacao="coluna-invertida">
+            Formação coluna invertida
+          </button>
+        </div>
       </section>
     </main>
 

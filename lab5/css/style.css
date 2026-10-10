@@ -340,3 +340,124 @@ body.dano-contundente {
 .evento-dano {
   background-color: rgb(245 245 245 / 35%);
 }
+
+/* EXERCÍCIO 4 — TABULEIRO DE D&D */
+
+.evento-tabuleiro {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgb(245 245 245 / 90%);
+  border-radius: 10px;
+}
+
+#seletor-mapa {
+  padding: 10px;
+  margin: 8px 0 20px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* ÁREA DO TABULEIRO */
+
+.tabuleiro {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 3px solid #9b7b45;
+  border-radius: 10px;
+  background-color: #222;
+}
+
+/* MAPA POR BAIXO DAS PERSONAGENS */
+
+#mapa-batalha {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* CAMADA DAS PERSONAGENS */
+
+#formacao-personagens {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+}
+
+/* CADA PERSONAGEM OCUPA UMA QUADRÍCULA */
+
+.marcador-personagem {
+  display: block;
+  width: 8%;
+  height: auto;
+  max-height: 25%;
+  object-fit: contain;
+  flex: 0 0 8%;
+}
+
+/* FORMAÇÃO EM LINHA */
+
+.formacao-linha {
+  flex-direction: row;
+}
+
+/* FORMAÇÃO EM LINHA INVERTIDA */
+
+.formacao-linha-invertida {
+  flex-direction: row-reverse;
+}
+
+/* FORMAÇÃO EM COLUNA */
+
+.formacao-coluna {
+  flex-direction: column;
+}
+
+/* FORMAÇÃO EM COLUNA INVERTIDA */
+
+.formacao-coluna-invertida {
+  flex-direction: column-reverse;
+}
+
+/* BOTÕES DAS FORMAÇÕES */
+
+.botoes-formacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.botoes-formacao button {
+  padding: 10px 14px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.botoes-formacao button:hover {
+  background-color: #e5e5e5;
+}
+
+/* ECRÃS PEQUENOS */
+
+@media (width <= 500px) {
+  .evento-tabuleiro {
+    padding: 12px;
+  }
+
+  .botoes-formacao {
+    flex-direction: column;
+  }
+
+  .botoes-formacao button {
+    width: 100%;
+  }
+}
