@@ -222,37 +222,74 @@ atualizarHP("O Bárbaro está pronto para a batalha!");
 // 1. VARIÁVEIS
 const INTERVALO_REGENERACAO = 6000;
 const CURA_REGENERACAO = 1;
+const HP_INICIAL_REGENERACAO = 54;
+const HP_MAXIMO_REGENERACAO = 104;
+const CHAVE_HP_REGENERACAO = "barbaroHPRegeneracao";
 
 const valorRegeneracao = document.querySelector("#valor-regeneracao");
 const progressoRegeneracao = document.querySelector("#progresso-regeneracao");
 const mensagemRegeneracao = document.querySelector("#mensagem-regeneracao");
+const botaoResetRegeneracao = document.querySelector(
+  "#botao-reset-regeneracao",
+);
 
-// 2. EVENT HANDLER
+// Recuperar o HP da regeneração guardado no navegador
+const hpRegeneracaoGuardado = localStorage.getItem(CHAVE_HP_REGENERACAO);
+
+let hpRegeneracao =
+  hpRegeneracaoGuardado === null
+    ? HP_INICIAL_REGENERACAO
+    : Number(hpRegeneracaoGuardado);
+
+if (!Number.isFinite(hpRegeneracao)) {
+  hpRegeneracao = HP_INICIAL_REGENERACAO;
+}
+
+hpRegeneracao = Math.max(
+  0,
+  Math.min(HP_MAXIMO_REGENERACAO, Math.trunc(hpRegeneracao)),
+);
+
+// 2. EVENT HANDLERS
+function atualizarRegeneracao(mensagem) {
+  valorRegeneracao.textContent = hpRegeneracao;
+
+  progressoRegeneracao.style.width = `${(hpRegeneracao / HP_MAXIMO_REGENERACAO) * 100}%`;
+
+  mensagemRegeneracao.textContent = mensagem;
+
+  localStorage.setItem(CHAVE_HP_REGENERACAO, hpRegeneracao);
+}
+
 function regenerarHP() {
-  // Usar o mesmo HP do Exercício 5
-  if (hp < HP_MAXIMO) {
-    hp = Math.min(HP_MAXIMO, hp + CURA_REGENERACAO);
+  if (hpRegeneracao < HP_MAXIMO_REGENERACAO) {
+    hpRegeneracao = Math.min(
+      HP_MAXIMO_REGENERACAO,
+      hpRegeneracao + CURA_REGENERACAO,
+    );
 
-    // Atualizar o contador do Exercício 5
-    atualizarHP("✨ A magia regenerou 1 HP!");
-
-    // Atualizar também o Exercício 6
-    atualizarRegeneracao();
+    atualizarRegeneracao("✨ A magia regenerou 1 HP!");
   }
 
-  if (hp >= HP_MAXIMO) {
+  if (hpRegeneracao >= HP_MAXIMO_REGENERACAO) {
     mensagemRegeneracao.textContent =
       "✨ O Bárbaro atingiu o máximo de 104 HP!";
   }
 }
 
-function atualizarRegeneracao() {
-  valorRegeneracao.textContent = hp;
-  progressoRegeneracao.style.width = `${(hp / HP_MAXIMO) * 100}%`;
+function resetarRegeneracao() {
+  hpRegeneracao = HP_INICIAL_REGENERACAO;
+
+  atualizarRegeneracao(
+    "✨ A regeneração foi reiniciada! O Bárbaro voltou aos 54 HP.",
+  );
 }
 
-// 3. TEMPORIZADOR AUTOMÁTICO
+// 3. EVENT LISTENERS
+botaoResetRegeneracao.addEventListener("click", resetarRegeneracao);
+
+// 4. TEMPORIZADOR AUTOMÁTICO
 setInterval(regenerarHP, INTERVALO_REGENERACAO);
 
-// 4. ESTADO INICIAL
-atualizarRegeneracao();
+// 5. ESTADO INICIAL
+atualizarRegeneracao("✨ Regeneração ativa: +1 HP a cada 6 segundos.");

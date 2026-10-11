@@ -640,3 +640,20 @@ body.dano-contundente {
     width: 100px;
   }
 }
+
+#botao-reset-regeneracao {
+  display: block;
+  margin: 15px auto 0;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #176b43;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#botao-reset-regeneracao:hover {
+  filter: brightness(0.85);
+}
