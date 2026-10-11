@@ -460,3 +460,114 @@ body.dano-contundente {
     width: 100%;
   }
 }
+
+/* EXERCÍCIO 5 — HP DO BÁRBARO */
+
+.evento-hp {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgb(245 245 245 / 90%);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* IMAGEM DO BÁRBARO */
+
+.imagem-barbaro-hp {
+  display: block;
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto 20px;
+}
+
+/* TEXTO DO HP */
+
+#texto-hp {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* BARRA DE VIDA */
+
+.barra-hp {
+  width: 100%;
+  max-width: 500px;
+  height: 24px;
+  margin: 15px auto 25px;
+  overflow: hidden;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background-color: #ddd;
+}
+
+#progresso-hp {
+  width: 51.43%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #299764;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* BOTÕES DO HP */
+
+.botoes-hp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.botoes-hp button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#botao-dano {
+  background-color: #a32121;
+}
+
+#botao-alcool {
+  background-color: #8b6508;
+}
+
+#botao-reset-hp {
+  background-color: #333;
+}
+
+.botoes-hp button:hover {
+  filter: brightness(0.85);
+}
+
+#mensagem-hp {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* ECRÃS PEQUENOS */
+
+@media (width <= 500px) {
+  .evento-hp {
+    padding: 12px;
+  }
+
+  .imagem-barbaro-hp {
+    width: 120px;
+  }
+
+  .botoes-hp {
+    flex-direction: column;
+  }
+
+  .botoes-hp button {
+    width: 100%;
+  }
+}

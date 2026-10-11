@@ -147,3 +147,72 @@ botoesFormacao.forEach((botao) => {
     formacaoPersonagens.classList.add(`formacao-${botao.dataset.formacao}`);
   });
 });
+
+// EXERCÍCIO 5 — HP DO BÁRBARO
+
+// 1. VARIÁVEIS
+const HP_INICIAL = 54;
+const HP_MAXIMO = 104;
+const HP_MINIMO = 0;
+const DANO_INIMIGO = 9;
+const CURA_ALCOOL = 27;
+const CHAVE_HP = "barbaroHP";
+
+const valorHP = document.querySelector("#valor-hp");
+const progressoHP = document.querySelector("#progresso-hp");
+const mensagemHP = document.querySelector("#mensagem-hp");
+
+const botaoDano = document.querySelector("#botao-dano");
+const botaoAlcool = document.querySelector("#botao-alcool");
+const botaoResetHP = document.querySelector("#botao-reset-hp");
+
+// Recuperar o HP guardado ou começar com 54
+const hpGuardado = localStorage.getItem(CHAVE_HP);
+let hp = hpGuardado === null ? HP_INICIAL : Number(hpGuardado);
+
+// Garantir que o valor recuperado é válido
+if (!Number.isFinite(hp)) {
+  hp = HP_INICIAL;
+}
+
+hp = Math.max(HP_MINIMO, Math.min(HP_MAXIMO, Math.trunc(hp)));
+
+// 2. EVENT HANDLERS
+function atualizarHP(mensagem) {
+  valorHP.textContent = hp;
+  progressoHP.style.width = `${(hp / 105) * 100}%`;
+
+  if (hp <= 27) {
+    progressoHP.style.backgroundColor = "#a32121";
+  } else if (hp <= 54) {
+    progressoHP.style.backgroundColor = "#d49a17";
+  } else {
+    progressoHP.style.backgroundColor = "#299764";
+  }
+
+  mensagemHP.textContent = mensagem;
+  localStorage.setItem(CHAVE_HP, hp);
+}
+
+function esmagarInimigo() {
+  hp = Math.max(HP_MINIMO, hp - DANO_INIMIGO);
+  atualizarHP("💥 O Bárbaro esmagou o inimigo e perdeu 9 HP!");
+}
+
+function consumirAlcool() {
+  hp = Math.min(HP_MAXIMO, hp + CURA_ALCOOL);
+  atualizarHP("🍺 O Bárbaro bebeu e recuperou até 27 HP!");
+}
+
+function resetHP() {
+  hp = HP_INICIAL;
+  atualizarHP("⚔️ O Bárbaro voltou aos 54 HP iniciais!");
+}
+
+// 3. EVENT LISTENERS
+botaoDano.addEventListener("click", esmagarInimigo);
+botaoAlcool.addEventListener("click", consumirAlcool);
+botaoResetHP.addEventListener("click", resetHP);
+
+// 4. ESTADO INICIAL
+atualizarHP("O Bárbaro está pronto para a batalha!");
