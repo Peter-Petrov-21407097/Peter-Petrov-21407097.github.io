@@ -571,3 +571,72 @@ body.dano-contundente {
     width: 100%;
   }
 }
+
+/* EXERCÍCIO 6 — REGENERAÇÃO DO BÁRBARO */
+
+.evento-regeneracao {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgb(245 245 245 / 90%);
+  border: 2px solid #299764;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* IMAGEM DO BÁRBARO */
+
+.imagem-barbaro-regeneracao {
+  display: block;
+  width: 120px;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto 20px;
+}
+
+/* TEXTO DO HP */
+
+#texto-regeneracao {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* BARRA DE REGENERAÇÃO */
+
+.barra-regeneracao {
+  width: 100%;
+  max-width: 500px;
+  height: 24px;
+  margin: 15px auto 25px;
+  overflow: hidden;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background-color: #ddd;
+}
+
+#progresso-regeneracao {
+  width: 51.92%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #299764;
+  transition: width 0.3s ease;
+}
+
+/* MENSAGEM DA MAGIA */
+
+#mensagem-regeneracao {
+  margin-top: 20px;
+  color: #176b43;
+  font-weight: bold;
+}
+
+/* ECRÃS PEQUENOS */
+
+@media (width <= 500px) {
+  .evento-regeneracao {
+    padding: 12px;
+  }
+
+  .imagem-barbaro-regeneracao {
+    width: 100px;
+  }
+}
