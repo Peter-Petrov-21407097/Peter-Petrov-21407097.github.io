@@ -252,7 +252,7 @@ function atualizarRegeneracao() {
 }
 
 // 3. TEMPORIZADOR AUTOMÁTICO
-const temporizadorRegeneracao = setInterval(regenerarHP, INTERVALO_REGENERACAO);
+setInterval(regenerarHP, INTERVALO_REGENERACAO);
 
 // 4. ESTADO INICIAL
 atualizarRegeneracao();
