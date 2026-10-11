@@ -13,10 +13,10 @@ const nomePocao = document.querySelector("#nome-pocao");
 const textoPocao = document.querySelector("#texto-pocao");
 
 const coresPocoes = {
-  healing: "#ff9999",
-  greater: "#ff6666",
+  healing: "#f99",
+  greater: "#f66",
   superior: "#e60000",
-  supreme: "#990000",
+  supreme: "#900",
 };
 
 function atualizarPocao() {
