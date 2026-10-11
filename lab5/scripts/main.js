@@ -9,29 +9,24 @@ document.querySelectorAll("button.color").forEach((e) => {
 });
 
 // EXERCÍCIO 2 — POÇÕES DE CURA
-
 const nomePocao = document.querySelector("#nome-pocao");
+const textoPocao = document.querySelector("#texto-pocao");
 
-nomePocao.addEventListener("input", () => {
+const coresPocoes = {
+  healing: "#ff9999",
+  greater: "#ff6666",
+  superior: "#e60000",
+  supreme: "#990000",
+};
+
+function atualizarPocao() {
   const pocao = nomePocao.value.trim().toLowerCase();
+  const cor = coresPocoes[pocao];
 
-  nomePocao.classList.remove(
-    "pocao-healing",
-    "pocao-greater",
-    "pocao-superior",
-    "pocao-supreme",
-  );
+  textoPocao.style.color = cor || "";
+}
 
-  if (pocao === "potion of healing") {
-    nomePocao.classList.add("pocao-healing");
-  } else if (pocao === "potion of healing (greater)") {
-    nomePocao.classList.add("pocao-greater");
-  } else if (pocao === "potion of healing (superior)") {
-    nomePocao.classList.add("pocao-superior");
-  } else if (pocao === "potion of healing (supreme)") {
-    nomePocao.classList.add("pocao-supreme");
-  }
-});
+nomePocao.addEventListener("input", atualizarPocao);
 
 // EXERCÍCIO 3 — TIPOS DE DANO
 
