@@ -59,19 +59,19 @@ main {
 /* EXERCÍCIO 2 — CORES DAS POÇÕES */
 
 .pocao-healing {
-  color: #ff9999;
+  color: #f99;
 }
 
 .pocao-greater {
-  color: #ff6666;
+  color: #f66;
 }
 
 .pocao-superior {
-  color: #e60000;
+  color: #f66;
 }
 
 .pocao-supreme {
-  color: #990000;
+  color: #900;
 }
 
 /* EXERCÍCIO 3 — TIPOS DE DANO */
