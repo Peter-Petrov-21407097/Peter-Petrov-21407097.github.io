@@ -657,3 +657,82 @@ body.dano-contundente {
 #botao-reset-regeneracao:hover {
   filter: brightness(0.85);
 }
+
+/* EXERCÍCIO 7 — ESTALAGEM DE OAKHURST */
+
+.evento-estalagem {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgb(245 245 245 / 90%);
+  border: 2px solid #9b7b45;
+  border-radius: 10px;
+}
+
+/* FORMULÁRIO DA BEBIDA */
+
+#formulario-bebida {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#formulario-bebida label {
+  font-weight: bold;
+}
+
+#bebida {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 16px;
+}
+
+/* BOTÃO DO PEDIDO */
+
+#formulario-bebida button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #063;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#formulario-bebida button:hover {
+  filter: brightness(0.85);
+}
+
+/* RESULTADO DO PEDIDO */
+
+#resultado-bebida {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #176b43;
+}
+
+/* ECRÃS PEQUENOS */
+
+@media (width <= 500px) {
+  .evento-estalagem {
+    padding: 12px;
+  }
+
+  #formulario-bebida {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #bebida,
+  #formulario-bebida button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

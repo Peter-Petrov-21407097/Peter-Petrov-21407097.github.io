@@ -310,6 +310,39 @@
           RESET REGENERAÇÃO
         </button>
       </section>
+
+      <!-- EXERCÍCIO 7 — ESTALAGEM DE OAKHURST -->
+      <section class="evento-estalagem">
+        <h3>🍺 A Estalagem de Oakhurst</h3>
+
+        <p>
+          O Bárbaro entrou na estalagem de Oakhurst, onde é considerado um
+          cliente VIP!
+        </p>
+
+        <p>Bem-vindo de volta, campeão! O que vai beber hoje?</p>
+
+        <form id="formulario-bebida">
+          <label for="bebida">Escolhe a tua bebida:</label>
+
+          <select id="bebida" name="bebida" required>
+            <option value="">-- Escolhe uma bebida --</option>
+            <option value="Cerveja de anão">🍺 Cerveja de anão</option>
+            <option value="Hidromel élfico">🍯 Hidromel élfico</option>
+            <option value="Vinho de Neverwinter">
+              🍷 Vinho de Neverwinter
+            </option>
+            <option value="Poção de regeneração">
+              ✨ Poção de regeneração
+            </option>
+            <option value="Leite de cabra">🥛 Leite de cabra</option>
+          </select>
+
+          <button type="submit">Fazer pedido</button>
+        </form>
+
+        <p id="resultado-bebida" aria-live="polite"></p>
+      </section>
     </main>
 
     <script src="scripts/main.js"></script>

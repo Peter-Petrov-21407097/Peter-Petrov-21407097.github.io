@@ -152,7 +152,7 @@ botoesFormacao.forEach((botao) => {
 
 // 1. VARIÁVEIS
 const HP_INICIAL = 54;
-const HP_MAXIMO = 104;
+const HP_MAXIMO = 105;
 const HP_MINIMO = 0;
 const DANO_INIMIGO = 9;
 const CURA_ALCOOL = 27;
@@ -293,3 +293,25 @@ setInterval(regenerarHP, INTERVALO_REGENERACAO);
 
 // 5. ESTADO INICIAL
 atualizarRegeneracao("✨ Regeneração ativa: +1 HP a cada 6 segundos.");
+
+// EXERCÍCIO 7 — ESTALAGEM DE OAKHURST
+
+// 1. VARIÁVEIS
+const formularioBebida = document.querySelector("#formulario-bebida");
+const bebidaSelecionada = document.querySelector("#bebida");
+const resultadoBebida = document.querySelector("#resultado-bebida");
+
+// 2. EVENT HANDLER
+function fazerPedido(event) {
+  // Impedir que o formulário recarregue a página
+  event.preventDefault();
+
+  // Obter a bebida escolhida
+  const bebida = bebidaSelecionada.value;
+
+  // Mostrar a confirmação do pedido
+  resultadoBebida.textContent = `🍻 Para o nosso Bárbaro, ${bebida} a sair!`;
+}
+
+// 3. EVENT LISTENER
+formularioBebida.addEventListener("submit", fazerPedido);
