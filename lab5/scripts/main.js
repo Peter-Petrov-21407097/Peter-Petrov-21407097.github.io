@@ -10,7 +10,6 @@ document.querySelectorAll("button.color").forEach((e) => {
 
 // EXERCÍCIO 2 — POÇÕES DE CURA
 const nomePocao = document.querySelector("#nome-pocao");
-const textoPocao = document.querySelector("#texto-pocao");
 
 const coresPocoes = {
   healing: "#f99",
@@ -21,9 +20,7 @@ const coresPocoes = {
 
 function atualizarPocao() {
   const pocao = nomePocao.value.trim().toLowerCase();
-  const cor = coresPocoes[pocao];
-
-  textoPocao.style.color = cor || "";
+  nomePocao.style.backgroundColor = coresPocoes[pocao] || "";
 }
 
 nomePocao.addEventListener("input", atualizarPocao);
