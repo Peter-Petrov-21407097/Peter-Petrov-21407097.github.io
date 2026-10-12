@@ -18,7 +18,6 @@
       <!-- EXERCÍCIO 1 — O BÁRBARO -->
       <section class="evento-barbaro">
         <h3>🪓 O Bárbaro</h3>
-
         <p id="texto-rage">🪓 Gostaria de entrar em RAGE!!!!!!!!</p>
 
         <div class="botoes-cores">
@@ -44,7 +43,6 @@
           placeholder="Healing, Greater, Superior ou Supreme"
           autocomplete="off"
         />
-
         <datalist id="lista-pocoes">
           <option value="Healing"></option>
           <option value="Greater"></option>
@@ -182,10 +180,9 @@
 
       <!-- EXERCÍCIO 4 — TABULEIRO DE D&D -->
       <section class="evento-tabuleiro">
-        <h3>🗺️ Tabuleiro de D&amp; D</h3>
+        <h3>🗺️ Tabuleiro de D&amp;D</h3>
 
         <p>Escolhe um campo de batalha:</p>
-
         <label for="seletor-mapa">Mapa:</label>
         <select id="seletor-mapa">
           <option value="praia">Praia</option>
@@ -232,16 +229,12 @@
         </div>
 
         <h4>Formações de batalha</h4>
-
         <div class="botoes-formacao">
           <button type="button" data-formacao="linha">Formação linha</button>
-
           <button type="button" data-formacao="linha-invertida">
             Formação linha invertida
           </button>
-
           <button type="button" data-formacao="coluna">Formação coluna</button>
-
           <button type="button" data-formacao="coluna-invertida">
             Formação coluna invertida
           </button>
@@ -268,9 +261,7 @@
 
         <div class="botoes-hp">
           <button id="botao-dano" type="button">ESMAGUE O INIMIGO</button>
-
           <button id="botao-alcool" type="button">CONSUMA ÁLCOOL!</button>
-
           <button id="botao-reset-hp" type="button">RESET</button>
         </div>
 
@@ -311,35 +302,48 @@
       <!-- EXERCÍCIO 7 — ESTALAGEM DE OAKHURST -->
       <section class="evento-estalagem">
         <h3>🍺 A Estalagem de Oakhurst</h3>
+
         <img
           class="imagem-estalagem"
           src="images/taverna.jpg"
           alt="Interior de uma estalagem medieval de fantasia"
         />
+
         <p>
           O Bárbaro entrou na estalagem de Oakhurst, onde é considerado um
           cliente VIP!
         </p>
 
-        <p>Bem-vindo de volta, campeão! O que vai beber hoje?</p>
+        <p>
+          Bem-vindo, aventureiro! Antes de fazeres o teu pedido, diz-nos quem
+          és.
+        </p>
 
         <form id="formulario-bebida">
-          <label for="bebida">Escolhe a tua bebida:</label>
+          <div>
+            <label for="nome-aventureiro">Nome do aventureiro:</label>
+            <input
+              type="text"
+              id="nome-aventureiro"
+              name="nome"
+              placeholder="Introduz o teu nome"
+              required
+            />
+          </div>
 
-          <select id="bebida" name="bebida" required>
-            <option value="">-- Escolhe uma bebida --</option>
-            <option value="Cerveja de anão">🍺 Cerveja de anão</option>
-            <option value="Hidromel élfico">🍯 Hidromel élfico</option>
-            <option value="Vinho de Neverwinter">
-              🍷 Vinho de Neverwinter
-            </option>
-            <option value="Poção de regeneração">
-              ✨ Poção de regeneração
-            </option>
-            <option value="Leite de cabra">🥛 Leite de cabra</option>
-          </select>
+          <div>
+            <label for="idade-aventureiro">Idade:</label>
+            <input
+              type="number"
+              id="idade-aventureiro"
+              name="idade"
+              placeholder="Introduz a tua idade"
+              min="1"
+              required
+            />
+          </div>
 
-          <button type="submit">Fazer pedido</button>
+          <button type="submit">Entrar na estalagem</button>
         </form>
 
         <p id="resultado-bebida" aria-live="polite"></p>
@@ -347,6 +351,7 @@
     </main>
 
     <script src="scripts/main.js"></script>
+
     <footer>
       <p>© 2026 · Produzido por Pedro Santos · Interfaces Web</p>
     </footer>

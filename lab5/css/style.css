@@ -651,14 +651,27 @@ body.dano-contundente {
   font-weight: bold;
 }
 
-#bebida {
-  flex: 1 1 220px;
-  min-width: 0;
+/* CAMPOS DE NOME E IDADE */
+
+#formulario-bebida input {
+  box-sizing: border-box;
+  width: 100%;
   padding: 12px;
   border: 1px solid #999;
   border-radius: 6px;
   background-color: white;
   font-size: 16px;
+}
+
+#formulario-bebida div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#formulario-bebida input:focus {
+  outline: 2px solid #9b7b45;
+  outline-offset: 2px;
 }
 
 /* BOTÃO DO PEDIDO */
@@ -699,7 +712,7 @@ body.dano-contundente {
     align-items: stretch;
   }
 
-  #bebida,
+  #formulario-bebida input,
   #formulario-bebida button {
     width: 100%;
     box-sizing: border-box;
