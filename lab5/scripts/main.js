@@ -1,4 +1,3 @@
-
 // EXERCÍCIO 1 — O BÁRBARO
 
 const textoRage = document.querySelector("#texto-rage");
@@ -70,9 +69,7 @@ botoesCartas.forEach((carta) => {
 document.querySelectorAll("button.dano").forEach((botao) => {
   botao.addEventListener("click", () => {
     const dano = botao.dataset.dano;
-    const carta = document.querySelector(
-      `.carta-dano[data-dano="${dano}"]`
-    );
+    const carta = document.querySelector(`.carta-dano[data-dano="${dano}"]`);
 
     if (carta) {
       carta.click();
@@ -92,20 +89,15 @@ botaoResetDano.addEventListener("click", () => {
     carta.classList.remove("selecionada");
   });
 
-  resultadoDano.textContent =
-    "Escolhe um tipo de dano para ver o efeito!";
+  resultadoDano.textContent = "Escolhe um tipo de dano para ver o efeito!";
 });
 
 // EXERCÍCIO 4 — TABULEIRO DE D&D
 
 const seletorMapa = document.querySelector("#seletor-mapa");
 const mapaBatalha = document.querySelector("#mapa-batalha");
-const formacaoPersonagens = document.querySelector(
-  "#formacao-personagens"
-);
-const botoesFormacao = document.querySelectorAll(
-  "button[data-formacao]"
-);
+const formacaoPersonagens = document.querySelector("#formacao-personagens");
+const botoesFormacao = document.querySelectorAll("button[data-formacao]");
 
 // Mapas disponíveis
 
@@ -150,9 +142,7 @@ botoesFormacao.forEach((botao) => {
   botao.addEventListener("click", () => {
     formacaoPersonagens.classList.remove(...classesFormacao);
 
-    formacaoPersonagens.classList.add(
-      `formacao-${botao.dataset.formacao}`
-    );
+    formacaoPersonagens.classList.add(`formacao-${botao.dataset.formacao}`);
   });
 });
 
@@ -186,10 +176,7 @@ if (!Number.isFinite(hp)) {
   hp = HP_INICIAL;
 }
 
-hp = Math.max(
-  HP_MINIMO,
-  Math.min(HP_MAXIMO, Math.trunc(hp))
-);
+hp = Math.max(HP_MINIMO, Math.min(HP_MAXIMO, Math.trunc(hp)));
 
 // 2. EVENT HANDLERS
 
@@ -244,23 +231,16 @@ const HP_INICIAL_REGENERACAO = 54;
 const HP_MAXIMO_REGENERACAO = 104;
 const CHAVE_HP_REGENERACAO = "barbaroHPRegeneracao";
 
-const valorRegeneracao = document.querySelector(
-  "#valor-regeneracao"
-);
-const progressoRegeneracao = document.querySelector(
-  "#progresso-regeneracao"
-);
-const mensagemRegeneracao = document.querySelector(
-  "#mensagem-regeneracao"
-);
+const valorRegeneracao = document.querySelector("#valor-regeneracao");
+const progressoRegeneracao = document.querySelector("#progresso-regeneracao");
+const mensagemRegeneracao = document.querySelector("#mensagem-regeneracao");
 const botaoResetRegeneracao = document.querySelector(
-  "#botao-reset-regeneracao"
+  "#botao-reset-regeneracao",
 );
 
 // Recuperar o HP da regeneração guardado no navegador
 
-const hpRegeneracaoGuardado =
-  localStorage.getItem(CHAVE_HP_REGENERACAO);
+const hpRegeneracaoGuardado = localStorage.getItem(CHAVE_HP_REGENERACAO);
 
 let hpRegeneracao =
   hpRegeneracaoGuardado === null
@@ -273,10 +253,7 @@ if (!Number.isFinite(hpRegeneracao)) {
 
 hpRegeneracao = Math.max(
   0,
-  Math.min(
-    HP_MAXIMO_REGENERACAO,
-    Math.trunc(hpRegeneracao)
-  )
+  Math.min(HP_MAXIMO_REGENERACAO, Math.trunc(hpRegeneracao)),
 );
 
 // 2. EVENT HANDLERS
@@ -284,22 +261,18 @@ hpRegeneracao = Math.max(
 function atualizarRegeneracao(mensagem) {
   valorRegeneracao.textContent = hpRegeneracao;
 
-  progressoRegeneracao.style.width =
-    `${(hpRegeneracao / HP_MAXIMO_REGENERACAO) * 100}%`;
+  progressoRegeneracao.style.width = `${(hpRegeneracao / HP_MAXIMO_REGENERACAO) * 100}%`;
 
   mensagemRegeneracao.textContent = mensagem;
 
-  localStorage.setItem(
-    CHAVE_HP_REGENERACAO,
-    hpRegeneracao
-  );
+  localStorage.setItem(CHAVE_HP_REGENERACAO, hpRegeneracao);
 }
 
 function regenerarHP() {
   if (hpRegeneracao < HP_MAXIMO_REGENERACAO) {
     hpRegeneracao = Math.min(
       HP_MAXIMO_REGENERACAO,
-      hpRegeneracao + CURA_REGENERACAO
+      hpRegeneracao + CURA_REGENERACAO,
     );
 
     atualizarRegeneracao("✨ A magia regenerou 1 HP!");
@@ -315,16 +288,13 @@ function resetarRegeneracao() {
   hpRegeneracao = HP_INICIAL_REGENERACAO;
 
   atualizarRegeneracao(
-    "✨ A regeneração foi reiniciada! O Bárbaro voltou aos 54 HP."
+    "✨ A regeneração foi reiniciada! O Bárbaro voltou aos 54 HP.",
   );
 }
 
 // 3. EVENT LISTENERS
 
-botaoResetRegeneracao.addEventListener(
-  "click",
-  resetarRegeneracao
-);
+botaoResetRegeneracao.addEventListener("click", resetarRegeneracao);
 
 // 4. TEMPORIZADOR AUTOMÁTICO
 
@@ -332,26 +302,16 @@ setInterval(regenerarHP, INTERVALO_REGENERACAO);
 
 // 5. ESTADO INICIAL
 
-atualizarRegeneracao(
-  "✨ Regeneração ativa: +1 HP a cada 6 segundos."
-);
+atualizarRegeneracao("✨ Regeneração ativa: +1 HP a cada 6 segundos.");
 
 // EXERCÍCIO 7 — ESTALAGEM DE OAKHURST
 
 // 1. VARIÁVEIS
 
-const formularioBebida = document.querySelector(
-  "#formulario-bebida"
-);
-const nomeAventureiro = document.querySelector(
-  "#nome-aventureiro"
-);
-const idadeAventureiro = document.querySelector(
-  "#idade-aventureiro"
-);
-const resultadoBebida = document.querySelector(
-  "#resultado-bebida"
-);
+const formularioBebida = document.querySelector("#formulario-bebida");
+const nomeAventureiro = document.querySelector("#nome-aventureiro");
+const idadeAventureiro = document.querySelector("#idade-aventureiro");
+const resultadoBebida = document.querySelector("#resultado-bebida");
 
 // 2. EVENT HANDLER E SUBMISSÃO DO FORMULÁRIO
 
@@ -371,6 +331,5 @@ formularioBebida.onsubmit = (event) => {
   }
 
   // Mostrar a mensagem no HTML
-  resultadoBebida.textContent =
-    `Olá, o ${nome} tem ${idade} anos! Bem-vindo à Estalagem de Oakhurst, aventureiro!`;
+  resultadoBebida.textContent = `Olá, o ${nome} tem ${idade} anos! Bem-vindo à Estalagem de Oakhurst, aventureiro!`;
 };
