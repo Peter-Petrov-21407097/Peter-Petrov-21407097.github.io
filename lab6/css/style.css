@@ -22,3 +22,17 @@ form {
   flex-direction: column;
   gap: 10px;
 }
+
+.botao-voltar {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 12px 20px;
+  background-color: #006b3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.botao-voltar:hover {
+  background-color: #004d2b;
+}
