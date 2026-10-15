@@ -1,8 +1,7 @@
-
- // A. declaração de variáveis
+// A. declaração de variáveis
 
 const nodeInputNumero = document.querySelector(
-  "#registar input[type='number']"
+  "#registar input[type='number']",
 );
 
 const form = document.querySelector("#registar form");
@@ -11,9 +10,7 @@ const nodeUlColecao = document.querySelector("#colecao ul");
 const nodeTotalCromos = document.querySelector("#colecao h3 span");
 
 const nodeUlRepetidos = document.querySelector("#repetidos ul");
-const nodeTotalRepetidos = document.querySelector(
-  "#repetidos h3 span"
-);
+const nodeTotalRepetidos = document.querySelector("#repetidos h3 span");
 
 let colecao = [];
 let repetidos = [];
@@ -97,9 +94,7 @@ function atualizaLista(lista, nodeUl) {
 }
 
 function adicionaEventosEliminar() {
-  const botoesEliminar = document.querySelectorAll(
-    "#repetidos .btn-eliminar"
-  );
+  const botoesEliminar = document.querySelectorAll("#repetidos .btn-eliminar");
 
   botoesEliminar.forEach((botao) => {
     botao.onclick = () => {
