@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coleção de Cromos</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Coleção de Cromos</h1>
+    </header>
+
+    <main>
+      <section id="colecao">
+        <h2>A minha coleção</h2>
+
+        <ul id="lista-cromos"></ul>
+
+        <h3>Total de cromos: <span id="total-cromos">0</span></h3>
+      </section>
+
+      <section id="repetidos">
+        <h2>Cromos repetidos</h2>
+
+        <ul id="lista-repetidos"></ul>
+
+        <h3>Total de repetidos: <span id="total-repetidos">0</span></h3>
+      </section>
+
+      <section id="registar">
+        <h2>Registar novo cromo</h2>
+
+        <form id="formulario-cromo">
+          <label for="numero-cromo">Número do cromo:</label>
+
+          <input
+            type="number"
+            id="numero-cromo"
+            name="numero"
+            placeholder="Número"
+            min="1"
+            required
+          />
+
+          <input type="submit" value="Registar Cromo" />
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>2026, Universidade Lusófona</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

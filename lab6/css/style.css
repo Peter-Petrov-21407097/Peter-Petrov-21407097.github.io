@@ -1,0 +1,25 @@
+
+/* ESTILO DO CONTEÚDO PRINCIPAL */
+
+main {
+    background-color: #f2f2f2;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ESTILO DAS SECÇÕES */
+
+section {
+    border: 1px solid grey;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+/* FORMULÁRIO EM COLUNA */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
