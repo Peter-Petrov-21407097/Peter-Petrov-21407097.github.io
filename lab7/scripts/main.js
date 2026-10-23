@@ -3,8 +3,25 @@
 
 // A. Estado e variáveis
 const nodeListaProdutos = document.querySelector("#lista-produtos");
+const nodeListaCesto = document.querySelector("#lista-cesto");
+const nodeTotalCesto = document.querySelector("#total-cesto");
+const nodePrecoTotal = document.querySelector("#preco-total");
+const nodeLimparCesto = document.querySelector("#limpar-cesto");
+
+let cesto = JSON.parse(localStorage.getItem("cesto")) || [];
 
 // B. Funções utilitárias
+function formatarPreco(preco) {
+  return new Intl.NumberFormat("pt-PT", {
+    style: "currency",
+    currency: "EUR",
+  }).format(preco);
+}
+
+function guardarCesto() {
+  localStorage.setItem("cesto", JSON.stringify(cesto));
+}
+
 function criarProduto(produto) {
   const nodeArticle = document.createElement("article");
 
@@ -19,26 +36,101 @@ function criarProduto(produto) {
   nodeDescricao.textContent = produto.description;
 
   const nodePreco = document.createElement("p");
-  nodePreco.textContent = new Intl.NumberFormat("pt-PT", {
-    style: "currency",
-    currency: "EUR",
-  }).format(produto.price);
+  nodePreco.textContent = formatarPreco(produto.price);
 
-  nodeArticle.append(nodeImagem, nodeTitulo, nodeDescricao, nodePreco);
+  const nodeBotao = document.createElement("button");
+  nodeBotao.type = "button";
+  nodeBotao.textContent = "Adicionar ao cesto";
+  nodeBotao.dataset.id = produto.id;
+  nodeBotao.classList.add("adicionar-cesto");
+
+  nodeArticle.append(
+    nodeImagem,
+    nodeTitulo,
+    nodeDescricao,
+    nodePreco,
+    nodeBotao,
+  );
 
   return nodeArticle;
 }
 
 function mostrarProdutos() {
   produtos.forEach((produto) => {
-    const nodeProduto = criarProduto(produto);
-    nodeListaProdutos.append(nodeProduto);
+    nodeListaProdutos.append(criarProduto(produto));
   });
 }
 
+function mostrarCesto() {
+  nodeListaCesto.replaceChildren();
+
+  let quantidadeTotal = 0;
+  let precoTotal = 0;
+
+  cesto.forEach((artigo) => {
+    const produto = produtos.find((item) => item.id === artigo.id);
+
+    if (!produto) {
+      return;
+    }
+
+    const nodeItem = document.createElement("li");
+    const subtotal = produto.price * artigo.quantidade;
+
+    nodeItem.textContent =
+      `${produto.title} — ${artigo.quantidade} × ` +
+      `${formatarPreco(produto.price)} = ${formatarPreco(subtotal)}`;
+
+    nodeListaCesto.append(nodeItem);
+
+    quantidadeTotal += artigo.quantidade;
+    precoTotal += subtotal;
+  });
+
+  nodeTotalCesto.textContent = quantidadeTotal;
+  nodePrecoTotal.textContent = formatarPreco(precoTotal);
+}
+
 // C. Event handlers
+function adicionarAoCesto(id) {
+  const produto = produtos.find((item) => item.id === id);
+
+  if (!produto) {
+    return;
+  }
+
+  const artigoExistente = cesto.find((artigo) => artigo.id === id);
+
+  if (artigoExistente) {
+    artigoExistente.quantidade += 1;
+  } else {
+    cesto.push({
+      id: produto.id,
+      quantidade: 1,
+    });
+  }
+
+  guardarCesto();
+  mostrarCesto();
+}
+
+function limparCesto() {
+  cesto = [];
+  guardarCesto();
+  mostrarCesto();
+}
 
 // D. Event Listeners
+nodeListaProdutos.addEventListener("click", (evento) => {
+  const botao = evento.target.closest(".adicionar-cesto");
+
+  if (botao) {
+    adicionarAoCesto(Number(botao.dataset.id));
+  }
+});
+
+nodeLimparCesto.addEventListener("click", limparCesto);
 
 // E. Inicialização
 mostrarProdutos();
+mostrarCesto();

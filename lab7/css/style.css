@@ -55,3 +55,28 @@ section {
 #lista-produtos p {
   line-height: 1.5;
 }
+
+#cesto {
+  padding: 20px;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#lista-cesto li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.adicionar-cesto {
+  margin-top: 10px;
+}
+
+#limpar-cesto {
+  margin-top: 10px;
+}
