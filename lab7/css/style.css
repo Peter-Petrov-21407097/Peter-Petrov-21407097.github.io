@@ -84,3 +84,18 @@ button {
 .remover-cesto {
   margin-left: 12px;
 }
+
+.botao-voltar {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 26px;
+  background-color: #006837;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.botao-voltar:hover {
+  background-color: #004d2b;
+}
