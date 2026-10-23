@@ -1,3 +1,5 @@
+// Indica ao ESLint que produtos é definido noutro ficheiro
+/* global produtos */
 
 // A. Estado e variáveis
 console.log(produtos);
