@@ -1,4 +1,3 @@
-
 // A. Estado e variáveis
 
 // B. Funções utilitárias
