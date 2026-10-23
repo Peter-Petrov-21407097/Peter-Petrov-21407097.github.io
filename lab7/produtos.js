@@ -1,3 +1,5 @@
+/* exportar produtos */
+
 const produtos = [
   {
     id: 1,
