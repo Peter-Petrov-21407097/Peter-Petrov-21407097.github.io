@@ -1,5 +1,5 @@
 // Indica ao ESLint que produtos é definido noutro ficheiro
-/* global produtos */
+import { produtos } from "../produtos.js";
 
 // A. Estado e variáveis
 const nodeListaProdutos = document.querySelector("#lista-produtos");
@@ -134,3 +134,4 @@ nodeLimparCesto.addEventListener("click", limparCesto);
 // E. Inicialização
 mostrarProdutos();
 mostrarCesto();
+export { produtos };

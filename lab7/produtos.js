@@ -170,3 +170,4 @@ const produtos = [
     },
   },
 ];
+export { produtos };
