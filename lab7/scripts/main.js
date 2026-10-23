@@ -1,4 +1,4 @@
-// Indica ao ESLint que produtos é definido noutro ficheiro
+// Importa os dados dos produtos
 import { produtos } from "../produtos.js";
 
 // A. Estado e variáveis
@@ -77,10 +77,18 @@ function mostrarCesto() {
     const nodeItem = document.createElement("li");
     const subtotal = produto.price * artigo.quantidade;
 
-    nodeItem.textContent =
+    const nodeTexto = document.createElement("span");
+    nodeTexto.textContent =
       `${produto.title} — ${artigo.quantidade} × ` +
       `${formatarPreco(produto.price)} = ${formatarPreco(subtotal)}`;
 
+    const nodeBotaoRemover = document.createElement("button");
+    nodeBotaoRemover.type = "button";
+    nodeBotaoRemover.textContent = "Remover";
+    nodeBotaoRemover.dataset.id = produto.id;
+    nodeBotaoRemover.classList.add("remover-cesto");
+
+    nodeItem.append(nodeTexto, nodeBotaoRemover);
     nodeListaCesto.append(nodeItem);
 
     quantidadeTotal += artigo.quantidade;
@@ -114,6 +122,13 @@ function adicionarAoCesto(id) {
   mostrarCesto();
 }
 
+function removerDoCesto(id) {
+  cesto = cesto.filter((artigo) => artigo.id !== id);
+
+  guardarCesto();
+  mostrarCesto();
+}
+
 function limparCesto() {
   cesto = [];
   guardarCesto();
@@ -129,9 +144,16 @@ nodeListaProdutos.addEventListener("click", (evento) => {
   }
 });
 
+nodeListaCesto.addEventListener("click", (evento) => {
+  const botao = evento.target.closest(".remover-cesto");
+
+  if (botao) {
+    removerDoCesto(Number(botao.dataset.id));
+  }
+});
+
 nodeLimparCesto.addEventListener("click", limparCesto);
 
 // E. Inicialização
 mostrarProdutos();
 mostrarCesto();
-export { produtos };

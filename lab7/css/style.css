@@ -80,3 +80,11 @@ button {
 #limpar-cesto {
   margin-top: 10px;
 }
+
+.remover-cesto {
+  margin-left: 12px;
+}
+
+#lista-cesto li {
+  margin-bottom: 12px;
+}
