@@ -1,4 +1,6 @@
+
 // A. Estado e variáveis
+console.log(produtos);
 
 // B. Funções utilitárias
 
