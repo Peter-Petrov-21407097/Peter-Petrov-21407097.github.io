@@ -1,5 +1,7 @@
 const API_URL = "https://deisishop.pw.deisi.ulusofona.pt";
 
+const nodeOrdenar = document.querySelector("#ordenar");
+const nodePesquisa = document.querySelector("#pesquisa");
 const nodeListaProdutos = document.querySelector("#lista-produtos");
 const nodeListaCesto = document.querySelector("#lista-cesto");
 const nodeTotalCesto = document.querySelector("#total-cesto");
@@ -58,10 +60,23 @@ function mostrarProdutos() {
   nodeListaProdutos.replaceChildren();
 
   const categoria = nodeFiltroCategoria.value;
+  const ordenacao = nodeOrdenar.value;
+  const pesquisa = nodePesquisa.value.toLowerCase();
 
-  const produtosFiltrados = produtos.filter((produto) => {
-    return categoria === "todas" || produto.category === categoria;
+  let produtosFiltrados = produtos.filter((produto) => {
+    return (
+      (categoria === "todas" || produto.category === categoria) &&
+      produto.title.toLowerCase().includes(pesquisa)
+    );
   });
+
+  if (ordenacao === "asc") {
+    produtosFiltrados.sort((a, b) => Number(a.price) - Number(b.price));
+  }
+
+  if (ordenacao === "desc") {
+    produtosFiltrados.sort((a, b) => Number(b.price) - Number(a.price));
+  }
 
   produtosFiltrados.forEach((produto) => {
     nodeListaProdutos.append(criarProduto(produto));
@@ -191,5 +206,7 @@ nodeListaCesto.addEventListener("click", (evento) => {
 
 nodeLimparCesto.addEventListener("click", limparCesto);
 nodeFiltroCategoria.addEventListener("change", mostrarProdutos);
+nodeOrdenar.addEventListener("change", mostrarProdutos);
+nodePesquisa.addEventListener("input", mostrarProdutos);
 
 carregarDados();
