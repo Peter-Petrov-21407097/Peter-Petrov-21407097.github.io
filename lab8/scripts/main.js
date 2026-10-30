@@ -1,4 +1,3 @@
-
 const API_URL = "https://deisishop.pw.deisi.ulusofona.pt";
 
 const nodeListaProdutos = document.querySelector("#lista-produtos");
