@@ -209,7 +209,9 @@ async function finalizarCompra() {
     const resultado = await resposta.json();
 
     if (!resposta.ok) {
-      throw new Error(resultado.error || "Não foi possível finalizar a compra.");
+      throw new Error(
+        resultado.error || "Não foi possível finalizar a compra.",
+      );
     }
 
     nodeMensagemCompra.textContent =
