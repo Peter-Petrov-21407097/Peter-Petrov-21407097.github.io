@@ -20,7 +20,7 @@ footer {
 
 header {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255 255 255 / 90%);
   border-radius: 10px;
 }
 
@@ -40,7 +40,7 @@ section {
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgb(255 255 255 / 94%);
 }
 
 #lista-produtos {
@@ -76,7 +76,7 @@ section {
   margin-top: 30px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgb(255 255 255 / 94%);
 }
 
 #lista-cesto li {
@@ -103,7 +103,7 @@ button {
 
 footer {
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255 255 255 / 90%);
   border-radius: 8px;
 }
 
