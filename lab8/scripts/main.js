@@ -157,8 +157,26 @@ function adicionarAoCesto(id) {
   mostrarCesto();
 }
 
-function removerDoCesto(id) {
-  cesto = cesto.filter((artigo) => artigo.id !== id);
+function removerDoCesto(id, quantidadeRemover) {
+  const artigo = cesto.find((item) => item.id === id);
+
+  if (!artigo) {
+    return;
+  }
+
+  if (
+    !Number.isInteger(quantidadeRemover) ||
+    quantidadeRemover < 1 ||
+    quantidadeRemover > artigo.quantidade
+  ) {
+    return;
+  }
+
+  artigo.quantidade -= quantidadeRemover;
+
+  if (artigo.quantidade === 0) {
+    cesto = cesto.filter((item) => item.id !== id);
+  }
 
   guardarCesto();
   mostrarCesto();
@@ -265,7 +283,22 @@ nodeListaCesto.addEventListener("click", (evento) => {
   const botao = evento.target.closest(".remover-cesto");
 
   if (botao) {
-    removerDoCesto(Number(botao.dataset.id));
+    const id = Number(botao.dataset.id);
+    const artigo = cesto.find((item) => item.id === id);
+
+    if (!artigo) {
+      return;
+    }
+
+    const quantidade = prompt(
+      `Quantas unidades pretende remover? (1 a ${artigo.quantidade})`,
+    );
+
+    if (quantidade === null || quantidade.trim() === "") {
+      return;
+    }
+
+    removerDoCesto(id, Number(quantidade));
   }
 });
 
