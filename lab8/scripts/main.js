@@ -8,6 +8,11 @@ const nodeTotalCesto = document.querySelector("#total-cesto");
 const nodePrecoTotal = document.querySelector("#preco-total");
 const nodeLimparCesto = document.querySelector("#limpar-cesto");
 const nodeFiltroCategoria = document.querySelector("#filtro-categoria");
+const nodeNomeCliente = document.querySelector("#nome-cliente");
+const nodeEstudante = document.querySelector("#estudante");
+const nodeCupao = document.querySelector("#cupao");
+const nodeFinalizarCompra = document.querySelector("#finalizar-compra");
+const nodeMensagemCompra = document.querySelector("#mensagem-compra");
 
 let produtos = [];
 let cesto = JSON.parse(localStorage.getItem("cesto")) || [];
@@ -165,6 +170,64 @@ function limparCesto() {
   mostrarCesto();
 }
 
+async function finalizarCompra() {
+  const nome = nodeNomeCliente.value.trim();
+
+  if (cesto.length === 0) {
+    nodeMensagemCompra.textContent = "O cesto está vazio.";
+    return;
+  }
+
+  if (!nome) {
+    nodeMensagemCompra.textContent = "Introduza o seu nome.";
+    return;
+  }
+
+  const produtosCompra = cesto.flatMap((artigo) =>
+    Array(artigo.quantidade).fill(artigo.id),
+  );
+
+  const dadosCompra = {
+    products: produtosCompra,
+    student: nodeEstudante.checked,
+    coupon: nodeCupao.value.trim(),
+    name: nome,
+  };
+
+  nodeFinalizarCompra.disabled = true;
+  nodeMensagemCompra.textContent = "A processar a compra...";
+
+  try {
+    const resposta = await fetch(`${API_URL}/buy`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dadosCompra),
+    });
+
+    const resultado = await resposta.json();
+
+    if (!resposta.ok) {
+      throw new Error(resultado.error || "Não foi possível finalizar a compra.");
+    }
+
+    nodeMensagemCompra.textContent =
+      `${resultado.message} Total: ${formatarPreco(resultado.totalCost)} ` +
+      `Referência: ${resultado.reference}`;
+
+    limparCesto();
+    nodeNomeCliente.value = "";
+    nodeEstudante.checked = false;
+    nodeCupao.value = "";
+  } catch (erro) {
+    nodeMensagemCompra.textContent = erro.message;
+    console.error(erro);
+  } finally {
+    nodeFinalizarCompra.disabled = false;
+  }
+}
+
 async function carregarDados() {
   try {
     const [respostaProdutos, respostaCategorias] = await Promise.all([
@@ -204,6 +267,7 @@ nodeListaCesto.addEventListener("click", (evento) => {
   }
 });
 
+nodeFinalizarCompra.addEventListener("click", finalizarCompra);
 nodeLimparCesto.addEventListener("click", limparCesto);
 nodeFiltroCategoria.addEventListener("change", mostrarProdutos);
 nodeOrdenar.addEventListener("change", mostrarProdutos);
